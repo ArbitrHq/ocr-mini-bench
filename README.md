@@ -12,9 +12,33 @@
 
 
 
-**Optimal model for standard OCR tasks benchmark**
+A lightweight, reproducible benchmark to compare OCR extraction quality, reliability, latency, and cost across multiple LLM providers on business documents.
 
-A lightweight, reproducible benchmark to compare OCR extraction quality, reliability, latency, and cost across multiple LLM providers using business-oriented metrics. It tests OCR capabilities for (document + expected keys)-pairs. Accompanying blogpost: [ref]
+## Quick start (recommended)
+
+```bash
+npm install
+cp .env.example .env
+# add API keys to .env
+
+# optional safety checks
+npm run benchmark:preflight
+
+# smoke run: 1 model, 3 docs/domain, 2 runs
+npm run benchmark:run -- \
+  --models="gemini-3.1-flash-lite-preview" \
+  --runs=2 \
+  --docs-per-domain=3 \
+  --parallel=1 \
+  --provider-parallel
+
+# postprocess
+npm run postprocess:compare
+npm run postprocess:metrics
+
+# local UI
+npm run ui:serve
+```
 
 ## Dataset
 
@@ -61,9 +85,14 @@ Examples:
 # Run only three models by label
 npm run benchmark:run -- --runs=1 --domains=invoices,receipts --models="GPT-5 nano,Claude Haiku 4.5,Gemini 2.5 Flash-Lite"
 
-# Run by model_id values
-npm run benchmark:run -- --runs=1 --models="openai:gpt-5-nano,anthropic:claude-haiku-4.5"
+# Run by model_id values (no provider prefix in --models)
+npm run benchmark:run -- --runs=1 --models="gpt-5-nano,claude-haiku-4-5,gemini-3.1-flash-lite-preview"
 ```
+
+Important:
+
+- `--models` matches `model_id` or `model_label`
+- Do not prefix with provider in `--models` (use `gemini-3.1-flash-lite-preview`, not `google:gemini-3.1-flash-lite-preview`)
 
 ## Run benchmark (CLI)
 
@@ -87,6 +116,7 @@ During a run, progress is written to:
 
 - `artifacts/checkpoints/state.json`
 - `artifacts/checkpoints/runs.jsonl`
+- `artifacts/checkpoints/raw.runs.jsonl`
 
 Quick monitor commands:
 
@@ -108,29 +138,45 @@ The benchmark is checkpointed and resumable.
 npm run benchmark:rebuild
 
 # Retry failed tasks only
-npm run benchmark:run -- --mode=retry-failed
+npm run benchmark:run -- --retry-failed
 
 # Resume unfinished tasks
-npm run benchmark:run -- --mode=resume
+npm run benchmark:run -- --resume
 ```
 
 This prevents losing completed work during long runs.
 
 ## Post-process pipeline
 
-After a run, generate stable outputs in three stages:
+Pipeline:
+
+1. `benchmark:run` writes canonical raw output
+2. `postprocess:compare` scores raw output against ground truth
+3. `postprocess:metrics` builds leaderboard snapshots
+
+`benchmark:run` writes canonical raw to:
+
+- `artifacts/postprocess/raw.jsonl`
+- `artifacts/checkpoints/raw.jsonl` (latest deduplicated checkpoint view)
+
+Run stages 2 and 3:
 
 ```bash
-npm run postprocess:raw
 npm run postprocess:compare
 npm run postprocess:metrics
 ```
 
 These produce:
 
-- raw normalized run output
+- raw run output (`raw.jsonl`)
 - ground-truth comparison output
 - final leaderboard/debug artifacts for visualization
+
+For legacy checkpoints that only have `runs.jsonl`, you can still build raw with:
+
+```bash
+npm run postprocess:raw
+```
 
 ## Small frontend for results + debugging
 
@@ -140,15 +186,30 @@ Serve the included minimal UI:
 npm run ui:serve
 ```
 
-Then open the local URL printed in terminal. The UI provides:
+If port `4173` is busy:
+
+```bash
+npm run ui:serve -- --port=4174
+```
+
+Then open the local URL printed in terminal. The UI auto-discovers the latest artifacts under `artifacts/`.
+
+Frontend file to publish/copy:
+
+- `leaderboard.frontend.json` (this is the artifact your external frontend should consume)
+
+The UI provides:
 
 - Leaderboard view (aggregated metrics)
 - Debug view (document/key/model inspection)
 
 ## Output artifacts
 
-Primary outputs are written under `artifacts/`, including:
+Primary outputs under `artifacts/`:
 
-- checkpoint files
-- per-stage postprocess files
-- final leaderboard/debug JSON files
+- Checkpoints: `checkpoints/runs.jsonl`, `checkpoints/raw.runs.jsonl`, `checkpoints/raw.jsonl`, `checkpoints/state.json`
+- Raw: `postprocess/raw.jsonl`
+- Compare: `postprocess/comparison.jsonl`, `postprocess/comparison.summary.json`
+- Metrics: `postprocess/metrics.snapshot.json`
+- Leaderboard: `postprocess/leaderboard.aggregation.json`, `postprocess/leaderboard.frontend.json`
+- Debug and snapshots from run: `latest.debug.json`, `snapshot-*.debug.json`, `latest.json`, `snapshot-*.json`

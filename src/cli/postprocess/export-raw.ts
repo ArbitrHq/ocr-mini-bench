@@ -1,20 +1,45 @@
 import path from 'node:path';
 import type { LegacyCheckpointRecord, RawNormalizedRecord } from '../../postprocess/types';
+import { fromCheckpointRecord, fromDebugRun, toTaskKeyFromDebug } from '../../postprocess/raw-contract';
 import { readJsonFile, readJsonLinesFile, timestampForFilename, writeJsonFile, writeJsonLinesFile } from '../../postprocess/io';
 
 type CliArgs = {
   checkpointDir?: string;
   debugFile?: string;
+  inputJsonl?: string;
   outputJsonl: string;
   outputSummary: string;
 };
+
+function printHelp(): void {
+  console.log(`Usage:
+  npm run postprocess:raw -- [options]
+
+Options:
+  --checkpoint-dir=<path>   Checkpoint directory (uses runs.jsonl or raw.jsonl)
+  --debug-file=<path>       Build raw records from debug snapshot file
+  --input-jsonl=<path>      Re-read canonical raw JSONL and de-duplicate by task_key
+  --output-jsonl=<path>     Output raw JSONL (default: artifacts/postprocess/raw.jsonl)
+  --output-summary=<path>   Output summary JSON (default: artifacts/postprocess/raw.summary.json)
+  -h, --help                Show this help
+
+Examples:
+  npm run postprocess:raw
+  npm run postprocess:raw -- --checkpoint-dir=artifacts/checkpoints/full-2026-03-14
+  npm run postprocess:raw -- --debug-file=artifacts/latest.debug.json
+`);
+}
+
+function wantsHelp(argv: string[]): boolean {
+  return argv.includes('--help') || argv.includes('-h');
+}
 
 function parseArgs(argv: string[]): CliArgs {
   const defaultOutputDir = path.resolve(process.cwd(), 'artifacts/postprocess');
 
   const out: CliArgs = {
-    outputJsonl: path.resolve(defaultOutputDir, 'raw.normalized.jsonl'),
-    outputSummary: path.resolve(defaultOutputDir, 'raw.normalized.summary.json'),
+    outputJsonl: path.resolve(defaultOutputDir, 'raw.jsonl'),
+    outputSummary: path.resolve(defaultOutputDir, 'raw.summary.json'),
   };
 
   for (const arg of argv) {
@@ -26,6 +51,11 @@ function parseArgs(argv: string[]): CliArgs {
     if (arg.startsWith('--debug-file=')) {
       const value = arg.split('=')[1] ?? '';
       if (value.trim()) out.debugFile = path.resolve(process.cwd(), value.trim());
+      continue;
+    }
+    if (arg.startsWith('--input-jsonl=')) {
+      const value = arg.split('=')[1] ?? '';
+      if (value.trim()) out.inputJsonl = path.resolve(process.cwd(), value.trim());
       continue;
     }
     if (arg.startsWith('--output-jsonl=')) {
@@ -44,109 +74,6 @@ function parseArgs(argv: string[]): CliArgs {
   }
 
   return out;
-}
-
-function fromCheckpointRecord(record: LegacyCheckpointRecord): RawNormalizedRecord {
-  const metrics = record.metrics;
-  const debug = record.debug;
-
-  return {
-    schema_version: '1.0',
-    task_key: record.task_key,
-    completed_at: typeof record.completed_at === 'string' ? record.completed_at : null,
-    model: {
-      model_key: metrics.model_key,
-      provider: metrics.provider,
-      model_id: metrics.model_id,
-      model_label: metrics.model_label,
-      tier: metrics.tier,
-    },
-    document: {
-      domain: metrics.domain,
-      document_id: metrics.document_id,
-      run_number: metrics.run_number,
-    },
-    runtime: {
-      latency_ms: metrics.latency_ms,
-      input_tokens: metrics.input_tokens,
-      output_tokens: metrics.output_tokens,
-      total_cost_usd: metrics.total_cost_usd,
-      cache_hit: metrics.cache_hit,
-      cached_input_tokens: metrics.cached_input_tokens,
-      cache_write_tokens: metrics.cache_write_tokens,
-      error: metrics.error,
-    },
-    payload: {
-      system_prompt_used: debug.system_prompt_used ?? '',
-      user_prompt_used: debug.user_prompt_used ?? '',
-      raw_output: debug.raw_output ?? '',
-      parsed_output: debug.parsed_output ?? null,
-      extracted_pairs: Array.isArray(debug.extracted_pairs) ? debug.extracted_pairs : [],
-    },
-    legacy_metrics: {
-      success: metrics.success,
-      field_total: metrics.field_total,
-      field_correct: metrics.field_correct,
-      critical_total: metrics.critical_total,
-      critical_correct: metrics.critical_correct,
-      field_accuracy_pct: metrics.field_accuracy_pct,
-      critical_accuracy_pct: metrics.critical_accuracy_pct,
-      found_key_count: metrics.found_key_count,
-      requested_key_count: metrics.requested_key_count,
-    },
-  };
-}
-
-function fromDebugRun(run: LegacyCheckpointRecord['debug']): RawNormalizedRecord {
-  const taskKey =
-    run.task_key ??
-    `${run.model_key}::${run.domain}::${run.document_id}::run${run.run_number}`;
-
-  return {
-    schema_version: '1.0',
-    task_key: taskKey,
-    completed_at: null,
-    model: {
-      model_key: run.model_key,
-      provider: run.provider,
-      model_id: run.model_id,
-      model_label: run.model_label,
-      tier: run.tier,
-    },
-    document: {
-      domain: run.domain,
-      document_id: run.document_id,
-      run_number: run.run_number,
-    },
-    runtime: {
-      latency_ms: run.latency_ms,
-      input_tokens: typeof run.input_tokens === 'number' ? run.input_tokens : 0,
-      output_tokens: typeof run.output_tokens === 'number' ? run.output_tokens : 0,
-      total_cost_usd: run.total_cost_usd,
-      cache_hit: run.cache_hit,
-      cached_input_tokens: run.cached_input_tokens,
-      cache_write_tokens: run.cache_write_tokens,
-      error: run.error,
-    },
-    payload: {
-      system_prompt_used: run.system_prompt_used ?? '',
-      user_prompt_used: run.user_prompt_used ?? '',
-      raw_output: run.raw_output ?? '',
-      parsed_output: run.parsed_output ?? null,
-      extracted_pairs: Array.isArray(run.extracted_pairs) ? run.extracted_pairs : [],
-    },
-    legacy_metrics: {
-      success: run.success,
-      field_total: run.field_total,
-      field_correct: run.field_correct,
-      critical_total: run.critical_total,
-      critical_correct: run.critical_correct,
-      field_accuracy_pct: run.field_accuracy_pct,
-      critical_accuracy_pct: run.critical_accuracy_pct,
-      found_key_count: run.found_key_count,
-      requested_key_count: run.requested_key_count,
-    },
-  };
 }
 
 async function loadFromCheckpoint(checkpointDir: string): Promise<RawNormalizedRecord[]> {
@@ -169,21 +96,41 @@ async function loadFromDebug(debugFile: string): Promise<RawNormalizedRecord[]> 
   const latestByTask = new Map<string, LegacyCheckpointRecord['debug']>();
 
   for (const run of runs) {
-    const taskKey =
-      run.task_key ??
-      `${run.model_key}::${run.domain}::${run.document_id}::run${run.run_number}`;
+    const taskKey = toTaskKeyFromDebug(run);
     latestByTask.set(taskKey, run);
   }
 
   return Array.from(latestByTask.values()).map(fromDebugRun);
 }
 
-async function main(): Promise<void> {
-  const args = parseArgs(process.argv.slice(2));
+async function loadFromCanonicalRaw(inputJsonl: string): Promise<RawNormalizedRecord[]> {
+  const lines = await readJsonLinesFile<RawNormalizedRecord>(inputJsonl);
+  const latestByTask = new Map<string, RawNormalizedRecord>();
+  for (const line of lines) {
+    if (line?.task_key && line.model && line.document && line.runtime && line.payload && line.legacy_metrics) {
+      latestByTask.set(line.task_key, line);
+    }
+  }
+  return Array.from(latestByTask.values());
+}
 
-  const rawRecords = args.debugFile
-    ? await loadFromDebug(args.debugFile)
-    : await loadFromCheckpoint(args.checkpointDir!);
+async function main(): Promise<void> {
+  const argv = process.argv.slice(2);
+  if (wantsHelp(argv)) {
+    printHelp();
+    return;
+  }
+  const args = parseArgs(argv);
+
+  const checkpointRawJsonl = args.checkpointDir ? path.resolve(args.checkpointDir, 'raw.jsonl') : undefined;
+
+  const rawRecords = args.inputJsonl
+    ? await loadFromCanonicalRaw(args.inputJsonl)
+    : args.debugFile
+      ? await loadFromDebug(args.debugFile)
+      : checkpointRawJsonl
+        ? await loadFromCanonicalRaw(checkpointRawJsonl).catch(async () => loadFromCheckpoint(args.checkpointDir!))
+        : await loadFromCheckpoint(args.checkpointDir!);
 
   rawRecords.sort((a, b) => a.task_key.localeCompare(b.task_key));
 
@@ -201,7 +148,13 @@ async function main(): Promise<void> {
 
   const summary = {
     generated_at: new Date().toISOString(),
-    source: args.debugFile ? { debug_file: args.debugFile } : { checkpoint_dir: args.checkpointDir },
+    source: args.inputJsonl
+      ? { input_jsonl: args.inputJsonl }
+      : args.debugFile
+        ? { debug_file: args.debugFile }
+        : checkpointRawJsonl
+          ? { checkpoint_raw_jsonl: checkpointRawJsonl, checkpoint_dir: args.checkpointDir }
+          : { checkpoint_dir: args.checkpointDir },
     output_jsonl: args.outputJsonl,
     schema_version: '1.0',
     records: rawRecords.length,
@@ -212,12 +165,12 @@ async function main(): Promise<void> {
     domains: Array.from(byDomain.entries())
       .map(([domain, count]) => ({ domain, count }))
       .sort((a, b) => a.domain.localeCompare(b.domain)),
-    build_id: `raw-normalized-${timestampForFilename()}`,
+    build_id: `raw-${timestampForFilename()}`,
   };
 
   await writeJsonFile(args.outputSummary, summary);
 
-  console.log(`Raw normalized records: ${rawRecords.length}`);
+  console.log(`Raw records: ${rawRecords.length}`);
   console.log(`Errors: ${errored}`);
   console.log(`JSONL: ${args.outputJsonl}`);
   console.log(`Summary: ${args.outputSummary}`);

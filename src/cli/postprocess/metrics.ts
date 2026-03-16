@@ -17,12 +17,34 @@ type CliArgs = {
   outputFrontendJson: string;
 };
 
+function printHelp(): void {
+  console.log(`Usage:
+  npm run postprocess:metrics -- [options]
+
+Options:
+  --comparison-jsonl=<path>       Comparison JSONL input (default: artifacts/postprocess/comparison.jsonl)
+  --raw-jsonl=<path>              Raw JSONL path for metadata only (default: artifacts/postprocess/raw.jsonl)
+  --output-metrics-json=<path>    Metrics snapshot output (default: artifacts/postprocess/metrics.snapshot.json)
+  --output-aggregation-json=<path> Leaderboard aggregation output (default: artifacts/postprocess/leaderboard.aggregation.json)
+  --output-frontend-json=<path>   Frontend snapshot output (default: artifacts/postprocess/leaderboard.frontend.json)
+  -h, --help                      Show this help
+
+Examples:
+  npm run postprocess:metrics
+  npm run postprocess:metrics -- --comparison-jsonl=artifacts/smoke/postprocess/comparison.jsonl
+`);
+}
+
+function wantsHelp(argv: string[]): boolean {
+  return argv.includes('--help') || argv.includes('-h');
+}
+
 function parseArgs(argv: string[]): CliArgs {
   const defaultDir = path.resolve(process.cwd(), 'artifacts/postprocess');
 
   const out: CliArgs = {
     comparisonJsonl: path.resolve(defaultDir, 'comparison.jsonl'),
-    rawJsonl: path.resolve(defaultDir, 'raw.normalized.jsonl'),
+    rawJsonl: path.resolve(defaultDir, 'raw.jsonl'),
     outputMetricsJson: path.resolve(defaultDir, 'metrics.snapshot.json'),
     outputAggregationJson: path.resolve(defaultDir, 'leaderboard.aggregation.json'),
     outputFrontendJson: path.resolve(defaultDir, 'leaderboard.frontend.json'),
@@ -160,7 +182,12 @@ function buildCacheSummary(records: ComparisonRecord[]): Array<{
 }
 
 async function main(): Promise<void> {
-  const args = parseArgs(process.argv.slice(2));
+  const argv = process.argv.slice(2);
+  if (wantsHelp(argv)) {
+    printHelp();
+    return;
+  }
+  const args = parseArgs(argv);
   const comparisonRecords = await readJsonLinesFile<ComparisonRecord>(args.comparisonJsonl);
 
   if (comparisonRecords.length === 0) {

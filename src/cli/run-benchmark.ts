@@ -5,6 +5,9 @@ import { createHash } from 'node:crypto';
 import { runOCRLeaderboardBenchmark } from '../benchmark/run';
 import { loadBenchmarkConfig, loadPreparedDocuments } from '../benchmark/dataset';
 import type { BenchmarkDebugRun, BenchmarkRunOptions, SingleRunMetrics } from '../benchmark/types';
+import type { RawNormalizedRecord } from '../postprocess/types';
+import { fromCheckpointRecord } from '../postprocess/raw-contract';
+import { writeJsonLinesFile } from '../postprocess/io';
 
 type CliArgs = {
   runsPerModel?: number;
@@ -18,6 +21,39 @@ type CliArgs = {
   resume: boolean;
   retryFailed: boolean;
 };
+
+function printHelp(): void {
+  console.log(`Usage:
+  npm run benchmark:run -- [options]
+
+Options:
+  --runs=<n>                Runs per model/document
+  --parallel=<n>            Max parallel requests per provider lane
+  --provider-parallel       Enable provider-lane parallel mode
+  --no-provider-parallel    Disable provider-lane parallel mode
+  --docs-per-domain=<n>     Limit documents per selected domain
+  --domains=<csv>           Domain filter (e.g. invoices,receipts,logistics)
+  --models=<csv>            Model filter by model_id or model_label
+  --output-dir=<path>       Snapshot + postprocess output directory (default: artifacts)
+  --checkpoint-dir=<path>   Checkpoint directory (default: artifacts/checkpoints)
+  --resume                  Resume unfinished tasks from checkpoint
+  --retry-failed            Run only failed tasks from checkpoint
+  -h, --help                Show this help
+
+Examples:
+  npm run benchmark:run -- --runs=2 --docs-per-domain=3 --models="gemini-3.1-flash-lite-preview"
+  npm run benchmark:run -- --resume --checkpoint-dir=artifacts/checkpoints/full-2026-03-14
+  npm run benchmark:run -- --retry-failed --checkpoint-dir=artifacts/checkpoints/full-2026-03-14
+
+Notes:
+  --models matches model_id or model_label from config/models.public.json.
+  Do not prefix provider in --models (use gemini-3.1-flash-lite-preview, not google:...).
+`);
+}
+
+function wantsHelp(argv: string[]): boolean {
+  return argv.includes('--help') || argv.includes('-h');
+}
 
 function parseArgs(argv: string[]): CliArgs {
   const out: CliArgs = {
@@ -283,7 +319,12 @@ async function writeCheckpointState(params: {
 }
 
 async function run(): Promise<void> {
-  const args = parseArgs(process.argv.slice(2));
+  const argv = process.argv.slice(2);
+  if (wantsHelp(argv)) {
+    printHelp();
+    return;
+  }
+  const args = parseArgs(argv);
   const mode: 'fresh' | 'resume' | 'retry-failed' = args.retryFailed
     ? 'retry-failed'
     : args.resume
@@ -303,10 +344,18 @@ async function run(): Promise<void> {
   await fs.mkdir(args.outputDir, { recursive: true });
   await fs.mkdir(args.checkpointDir, { recursive: true });
   const runsLogPath = path.resolve(args.checkpointDir, 'runs.jsonl');
+  const rawCheckpointLogPath = path.resolve(args.checkpointDir, 'raw.runs.jsonl');
+  const rawCheckpointLatestPath = path.resolve(args.checkpointDir, 'raw.jsonl');
+  const postprocessDir = path.resolve(args.outputDir, 'postprocess');
+  const rawOutputPath = path.resolve(postprocessDir, 'raw.jsonl');
   const statePath = path.resolve(args.checkpointDir, 'state.json');
 
   if (mode === 'fresh') {
-    await Promise.all([fs.writeFile(runsLogPath, '', 'utf8'), fs.writeFile(statePath, '', 'utf8')]);
+    await Promise.all([
+      fs.writeFile(runsLogPath, '', 'utf8'),
+      fs.writeFile(rawCheckpointLogPath, '', 'utf8'),
+      fs.writeFile(statePath, '', 'utf8'),
+    ]);
   } else if (!(await fileExists(runsLogPath))) {
     throw new Error(`Checkpoint log not found at ${runsLogPath}. Run once without --resume/--retry-failed first.`);
   }
@@ -374,7 +423,9 @@ async function run(): Promise<void> {
   let checkpointWriteChain = Promise.resolve();
   const queueCheckpointWrite = (line: CheckpointLine) => {
     checkpointWriteChain = checkpointWriteChain.then(async () => {
+      const rawLine = fromCheckpointRecord(line);
       await fs.appendFile(runsLogPath, `${JSON.stringify(line)}\n`, 'utf8');
+      await fs.appendFile(rawCheckpointLogPath, `${JSON.stringify(rawLine)}\n`, 'utf8');
       latestRecords.set(line.task_key, line);
       newRecordsThisRun += 1;
       const runCost = Number(line.metrics.total_cost_usd);
@@ -430,6 +481,14 @@ async function run(): Promise<void> {
   });
   await checkpointWriteChain;
 
+  const finalRawRecords: RawNormalizedRecord[] = Array.from(latestRecords.values())
+    .map((record) => fromCheckpointRecord(record))
+    .sort((a, b) => a.task_key.localeCompare(b.task_key));
+  await Promise.all([
+    writeJsonLinesFile(rawCheckpointLatestPath, finalRawRecords),
+    writeJsonLinesFile(rawOutputPath, finalRawRecords),
+  ]);
+
   const timestamp = timestampForFilename();
   const snapshotPath = path.resolve(args.outputDir, `snapshot-${timestamp}.json`);
   const snapshotDebugPath = path.resolve(args.outputDir, `snapshot-${timestamp}.debug.json`);
@@ -457,6 +516,9 @@ async function run(): Promise<void> {
   console.log(`Rows: ${Array.isArray(publicPayload.leaderboard) ? publicPayload.leaderboard.length : 0}`);
   console.log(`Runs: ${snapshot.run_count}`);
   console.log(`Checkpoint log: ${runsLogPath}`);
+  console.log(`Checkpoint raw log: ${rawCheckpointLogPath}`);
+  console.log(`Checkpoint canonical raw: ${rawCheckpointLatestPath}`);
+  console.log(`Canonical raw output: ${rawOutputPath}`);
   console.log(`Checkpoint state: ${statePath}`);
   console.log(`New checkpoint records this run: ${newRecordsThisRun}`);
   if (Array.isArray(snapshot.cache_summary) && snapshot.cache_summary.length > 0) {

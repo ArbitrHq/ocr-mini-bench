@@ -2,7 +2,7 @@ import path from 'node:path';
 import { loadPreparedDocuments } from '../../benchmark/dataset';
 import { scoreModelOutputDetailed } from '../../benchmark/scoring';
 import type { ComparisonRecord, RawNormalizedRecord } from '../../postprocess/types';
-import { readJsonLinesFile, writeJsonFile, writeJsonLinesFile } from '../../postprocess/io';
+import { fileExists, readJsonLinesFile, writeJsonFile, writeJsonLinesFile } from '../../postprocess/io';
 
 type CliArgs = {
   rawJsonl: string;
@@ -10,10 +10,30 @@ type CliArgs = {
   outputSummary: string;
 };
 
+function printHelp(): void {
+  console.log(`Usage:
+  npm run postprocess:compare -- [options]
+
+Options:
+  --raw-jsonl=<path>        Canonical raw JSONL input (default: artifacts/postprocess/raw.jsonl)
+  --output-jsonl=<path>     Comparison JSONL output (default: artifacts/postprocess/comparison.jsonl)
+  --output-summary=<path>   Comparison summary output (default: artifacts/postprocess/comparison.summary.json)
+  -h, --help                Show this help
+
+Examples:
+  npm run postprocess:compare
+  npm run postprocess:compare -- --raw-jsonl=artifacts/smoke/postprocess/raw.jsonl
+`);
+}
+
+function wantsHelp(argv: string[]): boolean {
+  return argv.includes('--help') || argv.includes('-h');
+}
+
 function parseArgs(argv: string[]): CliArgs {
   const defaultDir = path.resolve(process.cwd(), 'artifacts/postprocess');
   const out: CliArgs = {
-    rawJsonl: path.resolve(defaultDir, 'raw.normalized.jsonl'),
+    rawJsonl: path.resolve(defaultDir, 'raw.jsonl'),
     outputJsonl: path.resolve(defaultDir, 'comparison.jsonl'),
     outputSummary: path.resolve(defaultDir, 'comparison.summary.json'),
   };
@@ -53,11 +73,22 @@ function toDocKey(domain: string, documentId: string): string {
 }
 
 async function main(): Promise<void> {
-  const args = parseArgs(process.argv.slice(2));
+  const argv = process.argv.slice(2);
+  if (wantsHelp(argv)) {
+    printHelp();
+    return;
+  }
+  const args = parseArgs(argv);
+  if (!(await fileExists(args.rawJsonl))) {
+    const legacyRawJsonl = path.resolve(path.dirname(args.rawJsonl), 'raw.normalized.jsonl');
+    if (await fileExists(legacyRawJsonl)) {
+      args.rawJsonl = legacyRawJsonl;
+    }
+  }
 
   const rawRecords = await readJsonLinesFile<RawNormalizedRecord>(args.rawJsonl);
   if (rawRecords.length === 0) {
-    throw new Error(`No raw normalized records found in ${args.rawJsonl}`);
+    throw new Error(`No raw records found in ${args.rawJsonl}`);
   }
 
   const selectedDomains = Array.from(new Set(rawRecords.map((record) => record.document.domain.toLowerCase())));
