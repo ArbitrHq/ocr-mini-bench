@@ -1,0 +1,85 @@
+{
+  "vendor_name": {
+    "value": "Sehha Pharmacies",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-11-02",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 82.80,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 1,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "19:29",
+    "critical": true,
+    "type": "string"
+  },
+  "reference_number": {
+    "value": "S407100029196",
+    "critical": false,
+    "type": "string"
+  },
+  "customer_id": {
+    "value": "CM0000009",
+    "critical": false,
+    "type": "string"
+  },
+  "customer_name": {
+    "value": "GlobeMed",
+    "critical": false,
+    "type": "string"
+  },
+  "invoice_id": {
+    "value": "625260",
+    "critical": false,
+    "type": "string"
+  },
+  "currency": {
+    "value": "EGP",
+    "critical": false,
+    "type": "string"
+  },
+  "payment_method": {
+    "value": "Cash",
+    "critical": false,
+    "type": "string"
+  },
+  "amount_tendered": {
+    "value": 100.00,
+    "critical": false,
+    "type": "float"
+  },
+  "change_given": {
+    "value": 17.20,
+    "critical": false,
+    "type": "float"
+  },
+  "items": [
+    {
+      "item_name": "Manual",
+      "quantity": 1,
+      "unit_price": 82.80,
+      "total_price": 82.80
+    }
+  ]
+}

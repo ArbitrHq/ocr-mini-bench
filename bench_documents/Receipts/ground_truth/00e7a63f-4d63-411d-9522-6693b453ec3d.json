@@ -1,0 +1,80 @@
+{
+  "vendor_name": {
+    "value": "CAC Parking",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-08-17",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 20.00,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 2.46,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 14.0,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 1,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "05:49",
+    "critical": true,
+    "type": "string"
+  },
+  "store_location": {
+    "value": "Cairo Airport",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_number": {
+    "value": "6704/0082/824",
+    "critical": false,
+    "type": "string"
+  },
+  "currency": {
+    "value": "LE",
+    "critical": false,
+    "type": "string"
+  },
+  "accepted_total": {
+    "value": 20.00,
+    "critical": false,
+    "type": "float"
+  },
+  "parking_start": {
+    "value": "2022-08-17T04:58",
+    "critical": false,
+    "type": "string"
+  },
+  "parking_end": {
+    "value": "2022-08-17T05:48",
+    "critical": false,
+    "type": "string"
+  },
+  "length_of_stay": {
+    "value": "0 Days, 00:50",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Pay parking ticket",
+      "quantity": 1,
+      "unit_price": 20.00,
+      "total_price": 20.00
+    }
+  ]
+}

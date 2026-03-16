@@ -1,0 +1,155 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "Helios Energy Solutions GmbH",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "Sonnenallee 42, 12059 Berlin, Germany",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+49 30 12345678",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_email": {
+      "value": "kontakt@helios-energy.de",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "DE123456789",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "DE89 1001 1001 1234 5678 90",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "DEUTDEBB",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Johnson & Sons",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "1 Main Street, New York, NY 10001",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0111222333",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_customer_number": {
+      "value": "CUST-1001",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-8467",
+    "critical": true,
+    "type": "string"
+  },
+  "install_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 5690,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 0,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 0,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 5690,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": [
+      "4",
+      "30"
+    ],
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "reference": {
+    "value": "REF-84209",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Solar Panels (400W Monocrystalline)",
+      "quantity": 12,
+      "unit_price": 250,
+      "total_price": 3000
+    },
+    {
+      "item_name": "Hybrid Inverter 5kW",
+      "quantity": 1,
+      "unit_price": 1200,
+      "total_price": 1200
+    },
+    {
+      "item_name": "Mounting System & Cabling",
+      "quantity": 1,
+      "unit_price": 450,
+      "total_price": 450
+    },
+    {
+      "item_name": "Professional Installation & Commissioning",
+      "quantity": 16,
+      "unit_price": 65,
+      "total_price": 1040
+    }
+  ],
+  "system_capacity_kw": {
+    "value": 4.8,
+    "critical": false,
+    "type": "number"
+  },
+  "warranty_years": {
+    "value": 25,
+    "critical": false,
+    "type": "number"
+  },
+  "installation_address": {
+    "value": "1 Main Street, New York, NY 10001",
+    "critical": false,
+    "type": "string"
+  }
+}

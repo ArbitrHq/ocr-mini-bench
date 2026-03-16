@@ -1,0 +1,30 @@
+{
+  "name": "ocr-mini-bench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "benchmark:bootstrap-dataset": "node scripts/bootstrap_dataset.mjs",
+    "benchmark:validate": "node scripts/validate_dataset.mjs",
+    "benchmark:labels": "node scripts/summarize_labels.mjs",
+    "benchmark:preflight": "npm run benchmark:validate && npm run typecheck",
+    "benchmark:smoke": "node --import tsx src/cli/run-benchmark.ts --runs=1 --docs-per-domain=1 --parallel=1",
+    "benchmark:run": "node --import tsx src/cli/run-benchmark.ts",
+    "benchmark:checkpoint": "node scripts/checkpoint_status.mjs",
+    "benchmark:rebuild": "node scripts/rebuild_from_checkpoint.mjs",
+    "postprocess:raw": "node --import tsx src/cli/postprocess/export-raw.ts",
+    "postprocess:compare": "node --import tsx src/cli/postprocess/compare.ts",
+    "postprocess:metrics": "node --import tsx src/cli/postprocess/metrics.ts",
+    "ui:serve": "node scripts/serve_ui.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.16",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

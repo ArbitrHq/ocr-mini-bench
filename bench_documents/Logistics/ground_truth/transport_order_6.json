@@ -1,0 +1,171 @@
+{
+  "document_id": {
+    "value": "NS-919150",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "TRANSPORT ORDER",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "time_of_issue": {
+    "value": "15:06",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_name": {
+    "value": "Northern Star Shipping & Logistics",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_address": {
+    "value": "North Star Way 1, 0000 Fictional City, Denmark",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_phone": {
+    "value": "+45 99 88 77 66",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_fax": {
+    "value": "+45 99 88 77 00",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_email": {
+    "value": "dispatch@northernstar.com",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_website": {
+    "value": "www.northernstar.com",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_branch_office": {
+    "value": "00000 GENERIC CITY, CZECH REPUBLIC",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_terminal": {
+    "value": "CONTAINER PORT 1, 00-000 PORT CITY, POLAND",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Fictional Trading Co. ApS",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_address": {
+    "value": "Generic Street 99, 0000 Fictional City, Denmark",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_mode": {
+    "value": "ROAD",
+    "critical": false,
+    "type": "string"
+  },
+  "equipment_type": {
+    "value": "40' HIGH CUBE CONTAINER",
+    "critical": false,
+    "type": "string"
+  },
+  "truck_id": {
+    "value": "NS-97-18",
+    "critical": false,
+    "type": "string"
+  },
+  "issued_location": {
+    "value": "LOS ANGELES, USA",
+    "critical": false,
+    "type": "string"
+  },
+  "issued_terminal_code": {
+    "value": "USLAXX",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_location": {
+    "value": "Antwerp, Belgium",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_terminal_code": {
+    "value": "BEANRTH",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_date": {
+    "value": "2026-03-27",
+    "critical": true,
+    "type": "date"
+  },
+  "loading_address": {
+    "value": "Los Angeles, USA (USLAXX)",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_date": {
+    "value": "2026-04-26",
+    "critical": true,
+    "type": "date"
+  },
+  "unloading_address": {
+    "value": "Antwerp, Belgium (BEANRTH)",
+    "critical": true,
+    "type": "string"
+  },
+  "special_instructions": {
+    "value": "STRICT TIME SLOT - DO NOT DELAY",
+    "critical": false,
+    "type": "string"
+  },
+  "required_documents": {
+    "value": "CMR to be signed and stamped.",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "cargo_type": {
+        "value": "container",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "NS-998877",
+      "container_size": "40",
+      "container_size_unit": "ft",
+      "commodity": "Fresh Fruit",
+      "gross_weight_ref": "PO-52632",
+      "gross_weight": 19431,
+      "gross_weight_unit": "kg",
+      "tare_weight_ref": "PO-52632",
+      "tare_weight": 3850,
+      "tare_weight_unit": "kg"
+    }
+  ],
+  "loading_time": {
+    "value": null,
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_time": {
+    "value": null,
+    "critical": true,
+    "type": "string"
+  },
+  "rate": {
+    "value": null,
+    "critical": true,
+    "type": "number"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "vendor_name": {
+    "value": "Metro",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-10-15",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 42.99,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 3,
+    "critical": true,
+    "type": "integer"
+  },
+  "store_name": {
+    "value": "Ahly",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_time": {
+    "value": "01:25",
+    "critical": true,
+    "type": "string"
+  },
+  "customer_care_number": {
+    "value": "19073",
+    "critical": false,
+    "type": "string"
+  },
+  "website": {
+    "value": "www.metro-markets.com",
+    "critical": false,
+    "type": "string"
+  },
+  "transaction_number": {
+    "value": "5637397",
+    "critical": false,
+    "type": "string"
+  },
+  "cashier_id": {
+    "value": "10024367",
+    "critical": false,
+    "type": "string"
+  },
+  "register_number": {
+    "value": "11",
+    "critical": false,
+    "type": "string"
+  },
+  "payment_method": {
+    "value": "Cash",
+    "critical": false,
+    "type": "string"
+  },
+  "amount_tendered": {
+    "value": 43.00,
+    "critical": false,
+    "type": "float"
+  },
+  "roundoff": {
+    "value": -0.01,
+    "critical": false,
+    "type": "float"
+  },
+  "tax_registration_number": {
+    "value": "611-682-095",
+    "critical": false,
+    "type": "string"
+  },
+  "commercial_register_number": {
+    "value": "11591",
+    "critical": false,
+    "type": "string"
+  },
+  "home_delivery_number": {
+    "value": "19619",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Croissatn Plain",
+      "quantity": 1,
+      "unit_price": 18.00,
+      "total_price": 18.00
+    },
+    {
+      "item_name": "Croissatn Plain",
+      "quantity": 1,
+      "unit_price": 18.00,
+      "total_price": 18.00
+    },
+    {
+      "item_name": "Schweppes Lemon",
+      "quantity": 1,
+      "unit_price": 6.99,
+      "total_price": 6.99
+    }
+  ]
+}

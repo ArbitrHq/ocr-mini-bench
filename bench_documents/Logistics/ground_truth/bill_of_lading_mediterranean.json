@@ -1,0 +1,227 @@
+{
+  "document_id": {
+    "value": "BL388394422",
+    "critical": true,
+    "type": "string"
+  },
+  "bill_of_lading_type": {
+    "value": "NON-NEGOTIABLE COPY",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "LogiTrans Global",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "TechCorp Inc.",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "imo_number": {
+    "value": "9480227",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL388394422",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG2076791",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_ref": {
+    "value": "EXP-56104",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "STAR",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_agents_endorsements": {
+    "value": "SHIPPER'S LOAD, COUNT AND SEALED",
+    "critical": false,
+    "type": "string"
+  },
+  "type_of_movement": {
+    "value": "FCL/FCL",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "STARLIGHT EXPRESS",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "812E",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "Rotterdam, Netherlands (NLRTDM)",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_delivery": {
+    "value": "Rotterdam, Netherlands (NLRTDM)",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "PREPAID",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Starlight Maritime",
+    "critical": false,
+    "type": "string"
+  },
+  "carriers_receipt": {
+    "value": "1 cntr",
+    "critical": false,
+    "type": "string"
+  },
+  "laden_on_board_date": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Qingdao",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_rider_pages": {
+    "value": 0,
+    "critical": false,
+    "type": "number"
+  },
+  "total_packages": {
+    "value": 465,
+    "critical": true,
+    "type": "number"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "CNFU9596510",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL368987",
+      "marks": "N/M",
+      "number_of_packages": 465,
+      "package_type": "CARTONS",
+      "general_description": "GENERAL MERCHANDISE",
+      "commodity": "GENERAL MERCHANDISE",
+      "gross_weight": {
+        "value": 13109,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 37,
+      "measurement_unit": "cu.m.",
+      "hs_code": {
+        "value": "38121914",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temperature": "-5",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL368987",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

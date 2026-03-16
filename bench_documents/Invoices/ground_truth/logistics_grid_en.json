@@ -1,0 +1,144 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "LogiTrans Global",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "88 Harbor Road, Rotterdam, 3011 AA",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": null,
+      "critical": true,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "NL0456123789B01",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "NL45 6123 7890 4561",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "INGBNL2A",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_company_number": {
+      "value": "45612378",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Johnson & Sons",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "1 Main Street, New York, NY 10001",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0111222333",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_customer_number": {
+      "value": "CUST-1001",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-5484",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 14081.38,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 2443.88,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 21,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 11637.5,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": 3,
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "reference": {
+    "value": "REF-22424",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Software license (Annual)",
+      "quantity": 8,
+      "unit_price": 408.87,
+      "unit": "month",
+      "total_price": 3270.99
+    },
+    {
+      "item_name": "Project management",
+      "quantity": 7,
+      "unit_price": 676.86,
+      "unit": "km",
+      "total_price": 4738
+    },
+    {
+      "item_name": "Software license (Annual)",
+      "quantity": 6,
+      "unit_price": 604.75,
+      "unit": "km",
+      "total_price": 3628.51
+    }
+  ],
+  "bill_of_lading_number": {
+    "value": "BOL-62140",
+    "critical": false,
+    "type": "string"
+  },
+  "container_number": {
+    "value": "MSCU2832595",
+    "critical": false,
+    "type": "string"
+  }
+}

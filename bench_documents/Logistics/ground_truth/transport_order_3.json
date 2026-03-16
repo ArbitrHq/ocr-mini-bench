@@ -1,0 +1,146 @@
+{
+  "document_id": {
+    "value": "TO-703314",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "TRANSPORT ORDER",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "transport_party_name": {
+    "value": "Horizon Supply Chain",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_address": {
+    "value": "Industrial Park 4, 1000 City Center",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_contact_name": {
+    "value": "Dispatch Team",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_email": {
+    "value": "dispatch@horizonsupplychain.com",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_mode": {
+    "value": "ROAD",
+    "critical": false,
+    "type": "string"
+  },
+  "equipment_required": {
+    "value": "Refrigerated Trailer (Frigo)",
+    "critical": false,
+    "type": "string"
+  },
+  "rate": {
+    "value": 341,
+    "critical": true,
+    "type": "number"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_date": {
+    "value": "2026-03-13",
+    "critical": true,
+    "type": "date"
+  },
+  "loading_time": {
+    "value": "08:00 - 12:00",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_company": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_reference": {
+    "value": "L-REF-3620",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_date": {
+    "value": "2026-04-12",
+    "critical": true,
+    "type": "date"
+  },
+  "unloading_time": {
+    "value": "14:00 - 17:00",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_company": {
+    "value": "Johnson & Sons",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_address": {
+    "value": "1 Main Street, New York, NY 10001",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_reference": {
+    "value": "U-REF-9101",
+    "critical": false,
+    "type": "string"
+  },
+  "special_instructions": {
+    "value": "Driver must ensure continuous cooling during transit. Temperature printout required at unloading.",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_instructions": {
+    "value": "Trailer must be washed and sanitized before loading. No strong odors. Continuous temperature monitoring required. Printout at unloading. Unloading: Call 1 hour before arrival.",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "cargo_type": {
+        "value": "pallets",
+        "critical": true,
+        "type": "string"
+      },
+      "goods_description": "Fresh Produce / Pharmaceuticals",
+      "commodity": "Fresh Produce / Pharmaceuticals",
+      "quantity": 15,
+      "quantity_type": "Temperature Controlled Pallets",
+      "gross_weight": 6855,
+      "gross_weight_unit": "kg",
+      "required_setpoint": 1,
+      "required_setpoint_unit": "C",
+      "pre-cooling": "Required prior to loading",
+      "recorder_id": "REC-94215"
+    }
+  ]
+}

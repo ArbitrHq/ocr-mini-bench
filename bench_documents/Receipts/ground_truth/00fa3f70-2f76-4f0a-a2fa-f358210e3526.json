@@ -1,0 +1,95 @@
+{
+  "vendor_name": {
+    "value": "TotalEnergies",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-07-12",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 200.03,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 1,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "21:59",
+    "critical": true,
+    "type": "string"
+  },
+  "store_name": {
+    "value": "Bonjour Total Laselky",
+    "critical": false,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "Customer Receipt",
+    "critical": false,
+    "type": "string"
+  },
+  "transaction_type": {
+    "value": "Manual Transaction",
+    "critical": false,
+    "type": "string"
+  },
+  "transaction_number": {
+    "value": "4908020121",
+    "critical": false,
+    "type": "string"
+  },
+  "reference_number": {
+    "value": "21-310524-9080840",
+    "critical": false,
+    "type": "string"
+  },
+  "currency": {
+    "value": "EGP",
+    "critical": false,
+    "type": "string"
+  },
+  "pump_number": {
+    "value": "2",
+    "critical": false,
+    "type": "string"
+  },
+  "fuel_volume_liters": {
+    "value": 22.86,
+    "critical": false,
+    "type": "float"
+  },
+  "price_per_liter": {
+    "value": 8.75,
+    "critical": false,
+    "type": "float"
+  },
+  "facebook_page": {
+    "value": "www.facebook.com/total",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Gasoline 92",
+      "quantity": 22.86,
+      "unit_price": 8.75,
+      "total_price": 200.03
+    }
+  ]
+}

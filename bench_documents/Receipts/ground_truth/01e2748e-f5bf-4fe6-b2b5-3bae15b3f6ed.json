@@ -1,0 +1,78 @@
+{
+  "vendor_name": {
+    "value": "Zara",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-09-03",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 499.00,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 61.28,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 14.0,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 1,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "12:27",
+    "critical": true,
+    "type": "string"
+  },
+  "store_cr_number": {
+    "value": "34154",
+    "critical": false,
+    "type": "string"
+  },
+  "transaction_number": {
+    "value": "193877",
+    "critical": false,
+    "type": "string"
+  },
+  "pretax_amount": {
+    "value": 437.72,
+    "critical": false,
+    "type": "float"
+  },
+  "currency": {
+    "value": "EGP",
+    "critical": false,
+    "type": "string"
+  },
+  "payment_method": {
+    "value": "Mastercard",
+    "critical": false,
+    "type": "string"
+  },
+  "amount_tendered": {
+    "value": 499.00,
+    "critical": false,
+    "type": "float"
+  },
+  "items": [
+    {
+      "item_name": "Trousers",
+      "item_id”: ": "10001057",
+      "barcode": "0116501372104",
+      "tsp_code": "SWC”",
+      "quantity": 1,
+      "unit_price": 499.00,
+      "total_price": 499.00
+    }
+  ]
+}

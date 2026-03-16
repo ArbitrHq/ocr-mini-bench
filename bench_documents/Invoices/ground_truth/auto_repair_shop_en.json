@@ -1,0 +1,157 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "Mike's Auto Repair & Body Shop",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "12 Construction Way, London, E1 6AN",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+44 20 7946 0958",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "GB987654321",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "GB98 7654 3210 9876",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "BARCGB22",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Johnson & Sons",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "1 Main Street, New York, NY 10001",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": null,
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-1689",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 372.59,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 27.6,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 344.99,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": 4,
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Synthetic Oil Change",
+      "quantity": 1,
+      "unit_price": 59.99,
+      "total_price": 59.99
+    },
+    {
+      "item_name": "Brake Pads (Front)",
+      "quantity": 2,
+      "unit_price": 45,
+      "total_price": 90
+    },
+    {
+      "item_name": "Labor: Brake Installation",
+      "quantity": 1.5,
+      "unit_price": 120,
+      "total_price": 180
+    },
+    {
+      "item_name": "Environmental Disposal Fee",
+      "quantity": 1,
+      "unit_price": 15,
+      "total_price": 15
+    }
+  ],
+  "vehicle_brand": {
+    "value": "Toyota",
+    "critical": false,
+    "type": "string"
+  },
+  "vehicle_model": {
+    "value": "Camry",
+    "critical": false,
+    "type": "string"
+  },
+  "vehicle_year": {
+    "value": 2018,
+    "critical": false,
+    "type": "integer"
+  },
+  "vin": {
+    "value": "4T1B11HK1JU62002",
+    "critical": false,
+    "type": "string"
+  },
+  "license_plate": {
+    "value": "XYZ-9028",
+    "critical": false,
+    "type": "string"
+  },
+  "odometer": {
+    "value": 54895,
+    "critical": false,
+    "type": "integer"
+  },
+  "service_advisor": {
+    "value": "Steve Miller",
+    "critical": false,
+    "type": "string"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "vendor_name": {
+    "value": "Metro",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-08-28",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 225.46,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 10,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "16:55",
+    "critical": true,
+    "type": "string"
+  },
+  "store_name": {
+    "value": "Madinaty",
+    "critical": false,
+    "type": "string"
+  },
+  "website": {
+    "value": "www.metro-markets.com",
+    "critical": false,
+    "type": "string"
+  },
+  "transaction_number": {
+    "value": "7558357",
+    "critical": false,
+    "type": "string"
+  },
+  "account_number": {
+    "value": "0001526",
+    "critical": false,
+    "type": "string"
+  },
+  "cashier_id": {
+    "value": "10034821",
+    "critical": false,
+    "type": "string"
+  },
+  "register_number": {
+    "value": "12",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_type": {
+    "value": "DUPLICATE RECEIPT",
+    "critical": false,
+    "type": "string"
+  },
+  "amount_tendered": {
+    "value": 400.00,
+    "critical": false,
+    "type": "float"
+  },
+  "change_given": {
+    "value": 174.55,
+    "critical": false,
+    "type": "float"
+  },
+  "tax_registration_number": {
+    "value": "611-682-09",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Long Chps Sea Sa",
+      "quantity": 1,
+      "unit_price": 27.75,
+      "total_price": 27.75
+    },
+    {
+      "item_name": "Green House Roma",
+      "quantity": 1,
+      "unit_price": 46.99,
+      "total_price": 46.99
+    },
+    {
+      "item_name": "Nosh Nosh Potato",
+      "quantity": 1,
+      "unit_price": 6.25,
+      "total_price": 6.25
+    },
+    {
+      "item_name": "Istanbul Cheese",
+      "quantity": 0.624958,
+      "unit_price": 89.99,
+      "total_price": 56.24
+    },
+    {
+      "item_name": "Skittles Sour Ch",
+      "quantity": 1,
+      "unit_price": 10.50,
+      "total_price": 10.50
+    },
+    {
+      "item_name": "Indomie Noodle M",
+      "quantity": 3,
+      "unit_price": 7.25,
+      "total_price": 21.75
+    },
+    {
+      "item_name": "Indomie Beef Fl.",
+      "quantity": 2,
+      "unit_price": 4.99,
+      "total_price": 9.98
+    },
+    {
+      "item_name": "Maggi Chicken No",
+      "quantity": 1,
+      "unit_price": 19.75,
+      "total_price": 19.75
+    },
+    {
+      "item_name": "Nosh Nosh Potato",
+      "quantity": 1,
+      "unit_price": 6.25,
+      "total_price": 6.25
+    },
+    {
+      "item_name": "Insta Shop Deliv",
+      "quantity": 1,
+      "unit_price": 20.00,
+      "total_price": 20.00
+    }
+  ]
+}

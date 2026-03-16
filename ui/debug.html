@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR Mini-Bench Debug</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>OCR Debug</h1>
+        <div class="meta" id="debug-meta">Loading...</div>
+        <a class="link" href="/">Back To Leaderboard</a>
+      </header>
+
+      <section class="card controls-grid">
+        <label>Domain
+          <select id="domain"></select>
+        </label>
+        <label>Document
+          <select id="document"></select>
+        </label>
+        <label>Model
+          <select id="model"></select>
+        </label>
+        <label>Run
+          <select id="run"></select>
+        </label>
+      </section>
+
+      <section class="card split">
+        <div>
+          <h3>Document PDF</h3>
+          <iframe id="pdf-frame" class="pdf-frame"></iframe>
+        </div>
+        <div>
+          <h3>Ground Truth</h3>
+          <pre id="ground-truth" class="code"></pre>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Key Comparison</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Key</th><th>Expected</th><th>Extracted</th><th>Result</th></tr>
+            </thead>
+            <tbody id="key-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Raw Model Output</h3>
+        <pre id="raw-output" class="code"></pre>
+      </section>
+    </main>
+
+    <script src="/debug.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+{
+  "vendor_name": {
+    "value": "Dis-Chem Fleurdal Pharmacy",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-07-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 62.95,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 8.21,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 15.0,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 1,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "13:29",
+    "critical": true,
+    "type": "string"
+  },
+  "store_name": {
+    "value": "Fleurdal Mall",
+    "critical": false,
+    "type": "string"
+  },
+  "store_address": {
+    "value": "2 Vereeniging Drive, Bloemfontein",
+    "critical": false,
+    "type": "string"
+  },
+  "store_phone": {
+    "value": "051 108 0002",
+    "critical": false,
+    "type": "string"
+  },
+  "shop_number": {
+    "value": "55",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_type": {
+    "value": "Original",
+    "critical": false,
+    "type": "string"
+  },
+  "sale_type": {
+    "value": "Cash Sale",
+    "critical": false,
+    "type": "string"
+  },
+  "sale_number": {
+    "value": "C0936005",
+    "critical": false,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "Tax Invoice",
+    "critical": false,
+    "type": "string"
+  },
+  "vat_registration_number": {
+    "value": "4820223024",
+    "critical": false,
+    "type": "string"
+  },
+  "cashier_id": {
+    "value": "134751",
+    "critical": false,
+    "type": "string"
+  },
+  "cashier_name": {
+    "value": "A. Carelse",
+    "critical": false,
+    "type": "string"
+  },
+  "till_number": {
+    "value": "0003",
+    "critical": false,
+    "type": "string"
+  },
+  "payment_method": {
+    "value": "Card",
+    "critical": false,
+    "type": "string"
+  },
+  "amount_tendered": {
+    "value": 62.95,
+    "critical": false,
+    "type": "float"
+  },
+  "rounding": {
+    "value": 0.00,
+    "critical": false,
+    "type": "float"
+  },
+  "benefits_card_number": {
+    "value": "6273290104996567372",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Chinaga Caps 10",
+      "item_id": "6002125005803",
+      "quantity": 1,
+      "unit_price": 62.95,
+      "total_price": 62.95
+    }
+  ]
+}

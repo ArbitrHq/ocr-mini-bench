@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-03-15T20:38:53.779Z",
+  "input_raw_jsonl": "/Users/timo/Repos/arbitr-free-tier/oss/ocr-mini-bench/artifacts/postprocess/full-2026-03-14/raw.normalized.jsonl",
+  "output_comparison_jsonl": "/Users/timo/Repos/arbitr-free-tier/oss/ocr-mini-bench/artifacts/postprocess/full-2026-03-14/comparison.jsonl",
+  "records_total": 5880,
+  "records_scored": 5801,
+  "records_with_runtime_error": 79,
+  "records_missing_ground_truth": 0,
+  "success_changed_vs_legacy": 131
+}

@@ -1,0 +1,9 @@
+node_modules/
+.env
+.DS_Store
+artifacts/latest.json
+artifacts/latest.debug.json
+artifacts/latest.md
+artifacts/snapshot-*.json
+artifacts/snapshot-*.debug.json
+artifacts/checkpoints/

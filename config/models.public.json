@@ -1,0 +1,91 @@
+{
+  "description": "OCR mini-bench public model set (business-focused)",
+  "default_runs_per_model": 10,
+  "max_parallel_requests": 1,
+  "models": [
+    {
+      "provider": "openai",
+      "model_id": "gpt-5-nano",
+      "model_label": "GPT-5 nano",
+      "tier": "budget"
+    },
+    {
+      "provider": "openai",
+      "model_id": "gpt-5-mini",
+      "model_label": "GPT-5 mini",
+      "tier": "balanced"
+    },
+    {
+      "provider": "openai",
+      "model_id": "gpt-5",
+      "model_label": "GPT-5",
+      "tier": "sota"
+    },
+    {
+      "provider": "anthropic",
+      "model_id": "claude-haiku-4-5",
+      "model_label": "Claude Haiku 4.5",
+      "tier": "budget"
+    },
+    {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "model_label": "Claude Sonnet 4.6",
+      "tier": "balanced"
+    },
+    {
+      "provider": "anthropic",
+      "model_id": "claude-opus-4-6",
+      "model_label": "Claude Opus 4.6",
+      "tier": "sota"
+    },
+    {
+      "provider": "google",
+      "model_id": "gemini-2.5-flash-lite",
+      "model_label": "Gemini 2.5 Flash-Lite",
+      "tier": "budget"
+    },
+    {
+      "provider": "google",
+      "model_id": "gemini-3.1-flash-lite-preview",
+      "model_label": "Gemini 3.1 Flash-Lite",
+      "tier": "balanced"
+    },
+    {
+      "provider": "google",
+      "model_id": "gemini-3-flash-preview",
+      "model_label": "Gemini 3 Flash",
+      "tier": "balanced"
+    },
+    {
+      "provider": "google",
+      "model_id": "gemini-3.1-pro-preview",
+      "model_label": "Gemini 3.1 Pro",
+      "tier": "sota"
+    },
+    {
+      "provider": "mistral",
+      "model_id": "mistral-small-latest",
+      "model_label": "Mistral Small",
+      "tier": "budget"
+    },
+    {
+      "provider": "mistral",
+      "model_id": "mistral-medium-latest",
+      "model_label": "Mistral Medium",
+      "tier": "balanced"
+    },
+    {
+      "provider": "mistral",
+      "model_id": "mistral-large-latest",
+      "model_label": "Mistral Large",
+      "tier": "sota"
+    },
+    {
+      "provider": "mistral",
+      "model_id": "mistral-ocr-latest",
+      "model_label": "Mistral OCR",
+      "tier": "sota"
+    }
+  ]
+}

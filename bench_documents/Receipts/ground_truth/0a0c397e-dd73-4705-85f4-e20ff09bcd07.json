@@ -1,0 +1,97 @@
+{
+  "vendor_name": {
+    "value": "Vodafone",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2021-10-23",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 245.00,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 0.00,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 0.0,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 1,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "17:28",
+    "critical": true,
+    "type": "string"
+  },
+  "store_name": {
+    "value": "Mall of Arabia",
+    "critical": false,
+    "type": "string"
+  },
+  "store_id": {
+    "value": "458",
+    "critical": false,
+    "type": "string"
+  },
+  "website": {
+    "value": "vodafone.com.eg",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_type": {
+    "value": "Duplicate",
+    "critical": false,
+    "type": "string"
+  },
+  "sales_assistant_id": {
+    "value": "V16ADayem4",
+    "critical": false,
+    "type": "string"
+  },
+  "crg_drawer": {
+    "value": "01/10276",
+    "critical": false,
+    "type": "string"
+  },
+  "sales_receipt_number": {
+    "value": "260638",
+    "critical": false,
+    "type": "string"
+  },
+  "mobile_number": {
+    "value": "1000614495",
+    "critical": false,
+    "type": "string"
+  },
+  "currency": {
+    "value": "EGP",
+    "critical": false,
+    "type": "string"
+  },
+  "barcode": {
+    "value": "1639085",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "article_number": "206",
+      "item_name": "Vodafone Cash Deposit",
+      "quantity": 1.00,
+      "unit_price": 245.00,
+      "vat_rate": 0.0,
+      "total_price": 245.00
+    }
+  ]
+}

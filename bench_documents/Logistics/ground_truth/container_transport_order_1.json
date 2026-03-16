@@ -1,0 +1,231 @@
+{
+  "document_id": {
+    "value": "TO-8161797",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "ROAD TRANSPORT ORDER",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "transport_party_name": {
+    "value": "Pinnacle Transport Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_address": {
+    "value": "Industrial Park 4, 1000 City Center",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_contact_name": {
+    "value": "Dispatch Team",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_phone": {
+    "value": "+32 (0)3 999 88 77",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_email": {
+    "value": "dispatch@pinnacletransportsolutions.com",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_reference": {
+    "value": "TO-8161797",
+    "critical": false,
+    "type": "string"
+  },
+  "receiver_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "receiver_contact_name": {
+    "value": "Dispatch Department",
+    "critical": false,
+    "type": "string"
+  },
+  "receiver_phone": {
+    "value": "+32 3 000 00 00",
+    "critical": false,
+    "type": "string"
+  },
+  "sender_name": {
+    "value": "Dispatch Team",
+    "critical": false,
+    "type": "string"
+  },
+  "sender_email": {
+    "value": "dispatch@pinnacletransportsolutions.com",
+    "critical": false,
+    "type": "string"
+  },
+  "client_name": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "client_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "client_reference": {
+    "value": "L-REF-3331",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "Smith Logistics",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "5 Ring Avenue, Miami, FL 33101",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_reference": {
+    "value": "U-REF-7550",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_mode": {
+    "value": "ROAD",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_type": {
+    "value": "Container traction",
+    "critical": false,
+    "type": "string"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "vat": {
+    "value": "Without VAT: Goods in Transit",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "OCEAN CARRIER",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "ANTWERP",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel_arrival_eta": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "empty_depot_name": {
+    "value": "NORTH TERMINAL - GATE 99",
+    "critical": false,
+    "type": "string"
+  },
+  "empty_depot_reference": {
+    "value": "998877665",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_company": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_reference": {
+    "value": "L-REF-3331",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_company": {
+    "value": "Smith Logistics",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_address": {
+    "value": "5 Ring Avenue, Miami, FL 33101",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_reference": {
+    "value": "U-REF-7550",
+    "critical": false,
+    "type": "string"
+  },
+  "free_until_date": {
+    "value": "2026-04-12",
+    "critical": false,
+    "type": "date"
+  },
+  "remarks": {
+    "value": "Driver must have valid port/terminal ID. Extra documents: SEE SEPARATE EMAIL. ATTENTION: STRICT TIME SLOT.",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "cargo_type": {
+        "value": "Container",
+        "critical": true,
+        "type": "string"
+      },
+      "container_no": "VNGU4232448",
+      "seal_no": "NS-ST9988776",
+      "container_size": "40",
+      "container_size_unit": "ft",
+      "goods_description": "AUTO PARTS",
+      "commodity": "AUTO PARTS",
+      "quantity": 28,
+      "quantity_type": "Euro Pallets",
+      "gross_weight": 9381,
+      "gross_weight_unit": "kg"
+    }
+  ],
+  "loading_date": {
+    "value": null,
+    "critical": true,
+    "type": "date"
+  },
+  "unloading_date": {
+    "value": null,
+    "critical": true,
+    "type": "date"
+  },
+  "loading_time": {
+    "value": null,
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_time": {
+    "value": null,
+    "critical": true,
+    "type": "string"
+  },
+  "rate": {
+    "value": 369,
+    "critical": true,
+    "type": "number"
+  }
+}

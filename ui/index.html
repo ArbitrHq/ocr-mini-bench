@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR Mini-Bench Viewer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>OCR Mini-Bench</h1>
+        <div class="meta" id="meta">Loading...</div>
+        <a class="link" href="/debug">Open Debug View</a>
+      </header>
+
+      <section class="card">
+        <div class="row" id="domain-tabs"></div>
+        <div class="table-wrap">
+          <table id="leaderboard-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Provider</th>
+                <th>Success</th>
+                <th>pass^2 strict</th>
+                <th>pass^3 strict</th>
+                <th>pass^10 strict</th>
+                <th>All fields</th>
+                <th>Critical</th>
+                <th>Cost/doc</th>
+                <th>Latency</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/index.js" type="module"></script>
+  </body>
+</html>

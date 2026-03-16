@@ -1,0 +1,160 @@
+{
+  "document_id": {
+    "value": "TO-5425975",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "TRANSPORT ORDER",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "transport_party_name": {
+    "value": "Horizon Supply Chain",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_address": {
+    "value": "Industrial Park 4, 1000 City Center",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_contact_name": {
+    "value": "Dispatch Team",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_email": {
+    "value": "dispatch@horizonsupplychain.com",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_mode": {
+    "value": "RAIL / ROAD",
+    "critical": false,
+    "type": "string"
+  },
+  "equipment_required": {
+    "value": "Container Chassis 40ft",
+    "critical": false,
+    "type": "string"
+  },
+  "rate": {
+    "value": 977,
+    "critical": true,
+    "type": "number"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "train_number": {
+    "value": "TRN-1912",
+    "critical": false,
+    "type": "string"
+  },
+  "rail_pickup_terminal": {
+    "value": "EuroTerminal West, Track 4",
+    "critical": false,
+    "type": "string"
+  },
+  "rail_dropoff_terminal": {
+    "value": "Inland Port Hub North",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_date": {
+    "value": "2026-03-13",
+    "critical": true,
+    "type": "date"
+  },
+  "loading_time": {
+    "value": "08:00 - 12:00",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_company": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_reference": {
+    "value": "L-REF-5723",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_date": {
+    "value": "2026-04-12",
+    "critical": true,
+    "type": "date"
+  },
+  "unloading_time": {
+    "value": "14:00 - 17:00",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_company": {
+    "value": "Vandenberg Group",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_address": {
+    "value": "99 Station Road, Chicago, IL 60601",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_reference": {
+    "value": "U-REF-6761",
+    "critical": false,
+    "type": "string"
+  },
+  "special_instructions": {
+    "value": "Driver must have valid port/terminal ID.",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_instructions": {
+    "value": "UNLOADING NOTE: Call 1 hour before arrival.",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "cargo_type": {
+        "value": "container",
+        "critical": true,
+        "type": "string"
+      },
+      "container_no": "ATLU3224979",
+      "container_size": "40",
+      "container_size_unit": "ft",
+      "goods_description": "Auto Parts",
+      "commodity": "Auto Parts",
+      "quantity": 15,
+      "quantity_type": "Euro Pallets",
+      "gross_weight": 21210,
+      "gross_weight_unit": "kg"
+    }
+  ]
+}

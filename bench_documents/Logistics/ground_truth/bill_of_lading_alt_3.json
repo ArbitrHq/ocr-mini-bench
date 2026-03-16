@@ -1,0 +1,227 @@
+{
+  "document_id": {
+    "value": "BL205748596",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "GUANGDONG PETRO – TRADE DEVELOPMENT CORPORATION",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "No 4 Lane 955 Jinhai road Pu Dong New Area, Shanghai, China",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "86-21-38501080",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "logistics@gdpetro.com",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "MAGIC KEY COMPANY LIMITED",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "No.20, Street 5, VSIP II Industrial Park, Binh Duong, Vietnam",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "MAGIC KEY COMPANY LIMITED",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "No.20, Street 5, VSIP II Industrial Park, Binh Duong, Vietnam",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL205748596",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG3860791",
+    "critical": false,
+    "type": "string"
+  },
+  "export_reference": {
+    "value": "EXP-75676",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "EMGL",
+    "critical": false,
+    "type": "string"
+  },
+  "svc_contract": {
+    "value": "3153782",
+    "critical": false,
+    "type": "string"
+  },
+  "onward_inland_routing": {
+    "value": "Starlight Maritime",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "NORDTIGER/1500N",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "595E",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "INCHEON PORT, KOREA",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "INCHEON PORT, KOREA",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "CAT LAI PORT, VIETNAM",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_delivery": {
+    "value": "CAT LAI PORT, VIETNAM",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "COLLECT",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "EMERALD GLOBAL LINE A/S",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "laden_on_board_date": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Paxo",
+    "critical": false,
+    "type": "string"
+  },
+  "Freight_and_charges": {
+    "value": "O/F THC",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_originals": {
+    "value": 3,
+    "critical": false,
+    "type": "number"
+  },
+  "total_packages": {
+    "value": 160,
+    "critical": true,
+    "type": "number"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "EMSU3593614",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "EMCAPU9957",
+      "number_of_packages": 160,
+      "package_type": "CONTAINER DRUMS",
+      "general_description": "CHEMICALS",
+      "container_size": 20,
+      "container_size_units": "ft",
+      "commodity": "DIOCTYL TEREPHTHALATE (DOTP)",
+      "packaging": "STEEL DRUMS",
+      "gross_weight": {
+        "value": 35200,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kgs",
+      "measurement": 35.2,
+      "measurement_unit": "m3",
+      "hs_code": {
+        "value": "38122000",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_number": {
+        "value": "EMCAPU9957",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}
