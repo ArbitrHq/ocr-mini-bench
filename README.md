@@ -1,5 +1,16 @@
 # OCR Mini-bench
 
+[![Live Leaderboard](https://img.shields.io/badge/Live%20Leaderboard-OCR%20Mini--bench-0ea5e9?style=flat-square)](https://arbitrhq.ai/leaderboards/ocr-mini-bench)
+[![Blog](https://img.shields.io/badge/Blog-OCR%20Mini--bench-22c55e?style=flat-square)](https://arbitrhq.ai/blog/ocr-mini-bench)
+![Node >=20](https://img.shields.io/badge/Node-%3E%3D20-339933?style=flat-square&logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![License](https://img.shields.io/github/license/ArbitrHq/ocr-mini-bench?style=flat-square)
+![Latest release](https://img.shields.io/github/v/release/ArbitrHq/ocr-mini-bench?style=flat-square)
+![Last commit](https://img.shields.io/github/last-commit/ArbitrHq/ocr-mini-bench?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/ArbitrHq/ocr-mini-bench?style=flat-square)
+![Open issues](https://img.shields.io/github/issues/ArbitrHq/ocr-mini-bench?style=flat-square)
+
+
 **Optimal model for standard OCR tasks benchmark**
 
 A lightweight, reproducible benchmark to compare OCR extraction quality, reliability, latency, and cost across multiple LLM providers using business-oriented metrics. It tests OCR capabilities for (document + expected keys)-pairs. Accompanying blogpost: [ref]
