@@ -11,6 +11,7 @@
 ![Open issues](https://img.shields.io/github/issues/ArbitrHq/ocr-mini-bench?style=flat-square)
 
 
+
 **Optimal model for standard OCR tasks benchmark**
 
 A lightweight, reproducible benchmark to compare OCR extraction quality, reliability, latency, and cost across multiple LLM providers using business-oriented metrics. It tests OCR capabilities for (document + expected keys)-pairs. Accompanying blogpost: [ref]
@@ -151,26 +152,3 @@ Primary outputs are written under `artifacts/`, including:
 - checkpoint files
 - per-stage postprocess files
 - final leaderboard/debug JSON files
-
-## GitHub “tags” (topics) for repo polish
-
-If you mean the tags shown on the repo homepage (under description), those are **Repository Topics**.
-
-How to add them:
-
-1. Open your GitHub repository page.
-2. Click the gear icon next to **About** (right panel).
-3. In **Topics**, add keywords like:
-   - `ocr`
-   - `benchmark`
-   - `llm`
-   - `evaluation`
-   - `ai-observability`
-   - `document-ai`
-4. Save.
-
-Optional extra polish:
-
-- Create a `v0.1.0` release (`Releases` panel).
-- Add README badges (license, node version, last release).
-- Add repo description + website URL.
