@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-03-16T11:46:34.321Z",
+  "benchmark_id": "ocr-benchmark-2026-03-16T11-46-34-321Z",
+  "benchmark_description": "OCR mini-bench public model set (business-focused)",
+  "options": {
+    "runs_per_model": 2,
+    "max_parallel_requests": 1,
+    "provider_parallel": true,
+    "selected_domains": [],
+    "max_documents_per_domain": null
+  },
+  "dataset": {
+    "total_documents": 42,
+    "documents_per_domain": {
+      "invoices": 12,
+      "receipts": 13,
+      "logistics": 17
+    },
+    "total_keys": 1881,
+    "labeled_keys": 1854,
+    "critical_keys": 485,
+    "labeled_critical_keys": 459
+  },
+  "leaderboard": [
+    {
+      "rank": 1,
+      "model_key": "google:gemini-3.1-flash-lite-preview",
+      "provider": "google",
+      "model_id": "gemini-3.1-flash-lite-preview",
+      "model_label": "Gemini 3.1 Flash-Lite",
+      "tier": "balanced",
+      "runs_requested": 84,
+      "runs_completed": 84,
+      "successful_runs": 50,
+      "failed_runs": 0,
+      "success_rate_pct": 59.52,
+      "pass_at_2_pct": 35.43,
+      "pass_at_3_pct": 21.09,
+      "pass_at_5_pct": 7.47,
+      "pass_at_10_pct": 0.56,
+      "avg_field_accuracy_pct": 92.84,
+      "avg_critical_accuracy_pct": 93.01,
+      "field_accuracy_variance_pct": 12.12,
+      "avg_latency_ms": 11395.8,
+      "p95_latency_ms": 15849,
+      "total_cost_usd": 0.159779,
+      "avg_cost_per_doc_usd": 0.001902,
+      "avg_cost_per_run_usd": 0.001902,
+      "cost_per_success_usd": 0.003196,
+      "p95_cost_usd": 0.003025,
+      "p05_field_accuracy_pct": 76.47
+    }
+  ],
+  "by_domain": [
+    {
+      "domain": "invoices",
+      "rows": [
+        {
+          "rank": 1,
+          "model_key": "google:gemini-3.1-flash-lite-preview",
+          "provider": "google",
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_label": "Gemini 3.1 Flash-Lite",
+          "tier": "balanced",
+          "runs_requested": 24,
+          "runs_completed": 24,
+          "successful_runs": 18,
+          "failed_runs": 0,
+          "success_rate_pct": 75,
+          "pass_at_2_pct": 56.25,
+          "pass_at_3_pct": 42.19,
+          "pass_at_5_pct": 23.73,
+          "pass_at_10_pct": 5.63,
+          "avg_field_accuracy_pct": 98.96,
+          "avg_critical_accuracy_pct": 98.21,
+          "field_accuracy_variance_pct": 1.61,
+          "avg_latency_ms": 14843.2,
+          "p95_latency_ms": 49552,
+          "total_cost_usd": 0.051686,
+          "avg_cost_per_doc_usd": 0.002154,
+          "avg_cost_per_run_usd": 0.002154,
+          "cost_per_success_usd": 0.002871,
+          "p95_cost_usd": 0.00736,
+          "p05_field_accuracy_pct": 95.02
+        }
+      ]
+    },
+    {
+      "domain": "logistics",
+      "rows": [
+        {
+          "rank": 1,
+          "model_key": "google:gemini-3.1-flash-lite-preview",
+          "provider": "google",
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_label": "Gemini 3.1 Flash-Lite",
+          "tier": "balanced",
+          "runs_requested": 34,
+          "runs_completed": 34,
+          "successful_runs": 16,
+          "failed_runs": 0,
+          "success_rate_pct": 47.06,
+          "pass_at_2_pct": 22.15,
+          "pass_at_3_pct": 10.42,
+          "pass_at_5_pct": 2.31,
+          "pass_at_10_pct": 0.05,
+          "avg_field_accuracy_pct": 91.36,
+          "avg_critical_accuracy_pct": 91.28,
+          "field_accuracy_variance_pct": 8.53,
+          "avg_latency_ms": 12926.7,
+          "p95_latency_ms": 15849,
+          "total_cost_usd": 0.075452,
+          "avg_cost_per_doc_usd": 0.002219,
+          "avg_cost_per_run_usd": 0.002219,
+          "cost_per_success_usd": 0.004716,
+          "p95_cost_usd": 0.003785,
+          "p05_field_accuracy_pct": 75.47
+        }
+      ]
+    },
+    {
+      "domain": "receipts",
+      "rows": [
+        {
+          "rank": 1,
+          "model_key": "google:gemini-3.1-flash-lite-preview",
+          "provider": "google",
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_label": "Gemini 3.1 Flash-Lite",
+          "tier": "balanced",
+          "runs_requested": 26,
+          "runs_completed": 26,
+          "successful_runs": 16,
+          "failed_runs": 0,
+          "success_rate_pct": 61.54,
+          "pass_at_2_pct": 37.87,
+          "pass_at_3_pct": 23.3,
+          "pass_at_5_pct": 8.83,
+          "pass_at_10_pct": 0.78,
+          "avg_field_accuracy_pct": 89.11,
+          "avg_critical_accuracy_pct": 90.48,
+          "field_accuracy_variance_pct": 18.64,
+          "avg_latency_ms": 6211.8,
+          "p95_latency_ms": 8366,
+          "total_cost_usd": 0.032641,
+          "avg_cost_per_doc_usd": 0.001255,
+          "avg_cost_per_run_usd": 0.001255,
+          "cost_per_success_usd": 0.00204,
+          "p95_cost_usd": 0.002122,
+          "p05_field_accuracy_pct": 34.48
+        }
+      ]
+    }
+  ],
+  "run_count": 84,
+  "markdown_table": "| Rank | Model | Provider | Tier | Success % | pass^2 % | pass^3 % | pass^5 % | pass^10 % | Avg Field % | Critical Field % | Variance % | Cost / Doc (USD) | Cost / Success (USD) | Avg Latency (ms) |\n| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n| 1 | Gemini 3.1 Flash-Lite | google | balanced | 59.52 | 35.43 | 21.09 | 7.47 | 0.56 | 92.84 | 93.01 | 12.12 | 0.0019 | 0.0032 | 11395.8 |",
+  "warnings": [
+    "Only 1854/1881 keys are currently labeled."
+  ],
+  "cache_summary": [
+    {
+      "model_key": "google:gemini-3.1-flash-lite-preview",
+      "model_label": "Gemini 3.1 Flash-Lite",
+      "provider": "google",
+      "runs": 84,
+      "cache_hits": 0,
+      "cache_hit_rate_pct": 0,
+      "cached_input_tokens_total": 0,
+      "cached_input_tokens_avg": 0,
+      "cache_write_tokens_total": 0,
+      "cache_write_tokens_avg": 0
+    }
+  ]
+}
