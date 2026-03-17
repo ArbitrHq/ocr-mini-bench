@@ -11,8 +11,20 @@
     },
     {
       "provider": "openai",
+      "model_id": "gpt-5.4-nano",
+      "model_label": "GPT-5.4 nano",
+      "tier": "budget"
+    },
+    {
+      "provider": "openai",
       "model_id": "gpt-5-mini",
       "model_label": "GPT-5 mini",
+      "tier": "balanced"
+    },
+    {
+      "provider": "openai",
+      "model_id": "gpt-5.4-mini",
+      "model_label": "GPT-5.4 mini",
       "tier": "balanced"
     },
     {

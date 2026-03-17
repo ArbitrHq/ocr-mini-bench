@@ -19,6 +19,8 @@ export const MODEL_CATALOG: Record<ModelProvider, ModelOption[]> = {
     { id: 'gpt-5', label: 'GPT-5' },
     { id: 'gpt-5-mini', label: 'GPT-5 mini' },
     { id: 'gpt-5-nano', label: 'GPT-5 nano' },
+    { id: 'gpt-5.4-mini', label: 'GPT-5.4 mini' },
+    { id: 'gpt-5.4-nano', label: 'GPT-5.4 nano' },
     { id: 'gpt-5-pro', label: 'GPT-5 pro' },
     { id: 'gpt-4.1', label: 'GPT-4.1' },
     { id: 'gpt-4.1-mini', label: 'GPT-4.1 mini' },
