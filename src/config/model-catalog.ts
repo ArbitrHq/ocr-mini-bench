@@ -17,6 +17,7 @@ export const MODEL_CATALOG: Record<ModelProvider, ModelOption[]> = {
   ],
   openai: [
     { id: 'gpt-5', label: 'GPT-5' },
+    { id: 'gpt-5.4', label: 'GPT-5.4' },
     { id: 'gpt-5-mini', label: 'GPT-5 mini' },
     { id: 'gpt-5-nano', label: 'GPT-5 nano' },
     { id: 'gpt-5.4-mini', label: 'GPT-5.4 mini' },

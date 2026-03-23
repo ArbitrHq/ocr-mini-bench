@@ -5,6 +5,8 @@ import type {
   AggregatedMetricRow,
   ComparisonRecord,
   LeaderboardAggregationSnapshot,
+  MetricRangeStats,
+  MetricRanges,
   MetricsSnapshot,
 } from '../../postprocess/types';
 import { readJsonLinesFile, timestampForFilename, writeJsonFile } from '../../postprocess/io';
@@ -78,6 +80,249 @@ function parseArgs(argv: string[]): CliArgs {
   }
 
   return out;
+}
+
+type RangeDomainKey = 'overall' | string;
+
+type DocRangeAccumulator = {
+  cost_total_usd: number;
+  run_count: number;
+  success_count: number;
+};
+
+type BucketRangeAccumulator = {
+  success_pct_runs: number[];
+  critical_fields_pct: number[];
+  all_fields_pct: number[];
+  latency_ms: number[];
+  docs: Map<string, DocRangeAccumulator>;
+};
+
+function round(value: number, decimals: number): number {
+  const precision = 10 ** decimals;
+  return Math.round(value * precision) / precision;
+}
+
+function mean(values: number[]): number {
+  if (values.length === 0) return 0;
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
+
+function stdDev(values: number[]): number {
+  if (values.length <= 1) return 0;
+  const avg = mean(values);
+  const variance = Math.max(0, values.reduce((sum, value) => sum + (value - avg) ** 2, 0) / values.length);
+  return Math.sqrt(variance);
+}
+
+function percentileNearestRank(values: number[], p: number): number {
+  if (values.length === 0) return 0;
+  const sorted = [...values].sort((a, b) => a - b);
+  const index = Math.min(sorted.length - 1, Math.max(0, Math.ceil((p / 100) * sorted.length) - 1));
+  return sorted[index];
+}
+
+function combination(n: number, k: number): number {
+  if (!Number.isFinite(n) || !Number.isFinite(k)) return 0;
+  if (k < 0 || k > n) return 0;
+  if (k === 0 || k === n) return 1;
+  const kk = Math.min(k, n - k);
+  let result = 1;
+  for (let i = 1; i <= kk; i += 1) {
+    result = (result * (n - kk + i)) / i;
+  }
+  return result;
+}
+
+function bucketKey(domain: RangeDomainKey, modelKey: string): string {
+  return `${domain}::${modelKey}`;
+}
+
+function emptyMetricRangeStats(): MetricRangeStats {
+  return {
+    count: 0,
+    min: null,
+    p05: null,
+    p50: null,
+    p95: null,
+    max: null,
+    mean: null,
+    stddev: null,
+  };
+}
+
+function summarizeRange(values: number[], decimals: number): MetricRangeStats {
+  if (values.length === 0) {
+    return emptyMetricRangeStats();
+  }
+
+  return {
+    count: values.length,
+    min: round(Math.min(...values), decimals),
+    p05: round(percentileNearestRank(values, 5), decimals),
+    p50: round(percentileNearestRank(values, 50), decimals),
+    p95: round(percentileNearestRank(values, 95), decimals),
+    max: round(Math.max(...values), decimals),
+    mean: round(mean(values), decimals),
+    stddev: round(stdDev(values), decimals),
+  };
+}
+
+function emptyMetricRanges(): MetricRanges {
+  return {
+    cost_per_doc_usd: emptyMetricRangeStats(),
+    cost_per_success_usd: emptyMetricRangeStats(),
+    success_pct_runs: emptyMetricRangeStats(),
+    success_pct_docs: emptyMetricRangeStats(),
+    pass_at_3_strict_pct_docs: emptyMetricRangeStats(),
+    pass_at_5_strict_pct_docs: emptyMetricRangeStats(),
+    critical_fields_pct: emptyMetricRangeStats(),
+    all_fields_pct: emptyMetricRangeStats(),
+    latency_ms: emptyMetricRangeStats(),
+  };
+}
+
+function ensureBucket(
+  map: Map<string, BucketRangeAccumulator>,
+  domain: RangeDomainKey,
+  modelKey: string
+): BucketRangeAccumulator {
+  const key = bucketKey(domain, modelKey);
+  const existing = map.get(key);
+  if (existing) return existing;
+
+  const created: BucketRangeAccumulator = {
+    success_pct_runs: [],
+    critical_fields_pct: [],
+    all_fields_pct: [],
+    latency_ms: [],
+    docs: new Map<string, DocRangeAccumulator>(),
+  };
+  map.set(key, created);
+  return created;
+}
+
+function addRecordToBucket(
+  bucket: BucketRangeAccumulator,
+  docKey: string,
+  costUsd: number,
+  latencyMs: number,
+  criticalFieldsPct: number,
+  allFieldsPct: number,
+  success: boolean
+): void {
+  bucket.success_pct_runs.push(success ? 100 : 0);
+  bucket.critical_fields_pct.push(criticalFieldsPct);
+  bucket.all_fields_pct.push(allFieldsPct);
+  bucket.latency_ms.push(latencyMs);
+
+  const doc = bucket.docs.get(docKey) ?? { cost_total_usd: 0, run_count: 0, success_count: 0 };
+  doc.cost_total_usd += costUsd;
+  doc.run_count += 1;
+  if (success) doc.success_count += 1;
+  bucket.docs.set(docKey, doc);
+}
+
+function finalizeBucketRanges(bucket: BucketRangeAccumulator): MetricRanges {
+  const costPerDoc: number[] = [];
+  const costPerSuccess: number[] = [];
+  const successPctDocs: number[] = [];
+  const passAt3StrictPctDocs: number[] = [];
+  const passAt5StrictPctDocs: number[] = [];
+
+  for (const doc of bucket.docs.values()) {
+    if (doc.run_count > 0) {
+      costPerDoc.push(doc.cost_total_usd / doc.run_count);
+      successPctDocs.push((doc.success_count / doc.run_count) * 100);
+    }
+    if (doc.success_count > 0) {
+      costPerSuccess.push(doc.cost_total_usd / doc.success_count);
+    }
+
+    if (doc.run_count >= 3) {
+      const denominator = combination(doc.run_count, 3);
+      const numerator = combination(doc.success_count, 3);
+      passAt3StrictPctDocs.push(denominator > 0 ? (numerator / denominator) * 100 : 0);
+    }
+    if (doc.run_count >= 5) {
+      const denominator = combination(doc.run_count, 5);
+      const numerator = combination(doc.success_count, 5);
+      passAt5StrictPctDocs.push(denominator > 0 ? (numerator / denominator) * 100 : 0);
+    }
+  }
+
+  return {
+    cost_per_doc_usd: summarizeRange(costPerDoc, 6),
+    cost_per_success_usd: summarizeRange(costPerSuccess, 6),
+    success_pct_runs: summarizeRange(bucket.success_pct_runs, 3),
+    success_pct_docs: summarizeRange(successPctDocs, 3),
+    pass_at_3_strict_pct_docs: summarizeRange(passAt3StrictPctDocs, 3),
+    pass_at_5_strict_pct_docs: summarizeRange(passAt5StrictPctDocs, 3),
+    critical_fields_pct: summarizeRange(bucket.critical_fields_pct, 3),
+    all_fields_pct: summarizeRange(bucket.all_fields_pct, 3),
+    latency_ms: summarizeRange(bucket.latency_ms, 3),
+  };
+}
+
+function computeMetricRangesByBucket(records: ComparisonRecord[]): Map<string, MetricRanges> {
+  const accumulators = new Map<string, BucketRangeAccumulator>();
+
+  for (const record of records) {
+    if (record.runtime.error !== null) continue;
+
+    const domain = record.document.domain.toLowerCase();
+    const modelKey = record.model.model_key;
+    const docKey = `${domain}::${record.document.document_id}`;
+
+    const success = record.comparison?.success ?? record.legacy_metrics.success;
+    const criticalFieldsPct =
+      typeof record.comparison?.critical_pass_pct === 'number'
+        ? record.comparison.critical_pass_pct
+        : record.legacy_metrics.critical_accuracy_pct;
+    const allFieldsPct =
+      typeof record.comparison?.field_pass_pct === 'number'
+        ? record.comparison.field_pass_pct
+        : record.legacy_metrics.field_accuracy_pct;
+
+    const domainBucket = ensureBucket(accumulators, domain, modelKey);
+    addRecordToBucket(
+      domainBucket,
+      docKey,
+      record.runtime.total_cost_usd,
+      record.runtime.latency_ms,
+      criticalFieldsPct,
+      allFieldsPct,
+      success
+    );
+
+    const overallBucket = ensureBucket(accumulators, 'overall', modelKey);
+    addRecordToBucket(
+      overallBucket,
+      docKey,
+      record.runtime.total_cost_usd,
+      record.runtime.latency_ms,
+      criticalFieldsPct,
+      allFieldsPct,
+      success
+    );
+  }
+
+  const out = new Map<string, MetricRanges>();
+  for (const [key, bucket] of accumulators.entries()) {
+    out.set(key, finalizeBucketRanges(bucket));
+  }
+  return out;
+}
+
+function attachMetricRanges(
+  rows: AggregatedMetricRow[],
+  domain: RangeDomainKey,
+  metricRangesByBucket: Map<string, MetricRanges>
+): AggregatedMetricRow[] {
+  return rows.map((row) => ({
+    ...row,
+    metric_ranges: metricRangesByBucket.get(bucketKey(domain, row.model_key)) ?? emptyMetricRanges(),
+  }));
 }
 
 function buildMarkdownTable(rows: AggregatedMetricRow[]): string {
@@ -195,17 +440,24 @@ async function main(): Promise<void> {
   }
 
   const overallRows = aggregateMetricRows(comparisonRecords);
+  const metricRangesByBucket = computeMetricRangesByBucket(comparisonRecords);
 
   const selectedDomains = Array.from(
     new Set(comparisonRecords.map((record) => record.document.domain.toLowerCase()))
   ).sort((a, b) => a.localeCompare(b));
 
-  const byDomain = selectedDomains.map((domain) => {
+  const byDomainRows = selectedDomains.map((domain) => {
     const rows = aggregateMetricRows(
       comparisonRecords.filter((record) => record.document.domain.toLowerCase() === domain)
     );
     return { domain, rows };
   });
+
+  const overallRowsWithRanges = attachMetricRanges(overallRows, 'overall', metricRangesByBucket);
+  const byDomain = byDomainRows.map(({ domain, rows }) => ({
+    domain,
+    rows: attachMetricRanges(rows, domain, metricRangesByBucket),
+  }));
 
   const preparedDocuments = await loadPreparedDocuments({ domains: selectedDomains });
   const selectedDocIds = new Set(
@@ -226,7 +478,7 @@ async function main(): Promise<void> {
     }
   }
 
-  const hasIncompletePass10 = overallRows.some((row) => row.pass_at_10_pct === null);
+  const hasIncompletePass10 = overallRowsWithRanges.some((row) => row.pass_at_10_pct === null);
   if (hasIncompletePass10) {
     warnings.push('pass^10 is empty for one or more models because at least one document has fewer than 10 completed runs.');
   }
@@ -238,7 +490,7 @@ async function main(): Promise<void> {
       comparison_jsonl: args.comparisonJsonl,
     },
     run_count: comparisonRecords.length,
-    model_rows: overallRows,
+    model_rows: overallRowsWithRanges,
     by_domain: byDomain,
   };
 
@@ -251,7 +503,7 @@ async function main(): Promise<void> {
       metrics_json: args.outputMetricsJson,
     },
     dataset,
-    leaderboard: overallRows,
+    leaderboard: overallRowsWithRanges,
     by_domain: byDomain,
     run_count: comparisonRecords.length,
     warnings,
@@ -269,10 +521,10 @@ async function main(): Promise<void> {
       max_documents_per_domain: null,
     },
     dataset,
-    leaderboard: overallRows,
+    leaderboard: overallRowsWithRanges,
     by_domain: byDomain,
     run_count: comparisonRecords.length,
-    markdown_table: buildMarkdownTable(overallRows),
+    markdown_table: buildMarkdownTable(overallRowsWithRanges),
     warnings,
     cache_summary: buildCacheSummary(comparisonRecords),
   };
@@ -283,7 +535,7 @@ async function main(): Promise<void> {
     writeJsonFile(args.outputFrontendJson, frontendSnapshot),
   ]);
 
-  console.log(`Metrics rows: ${overallRows.length}`);
+  console.log(`Metrics rows: ${overallRowsWithRanges.length}`);
   console.log(`Run count: ${comparisonRecords.length}`);
   console.log(`Metrics JSON: ${args.outputMetricsJson}`);
   console.log(`Aggregation JSON: ${args.outputAggregationJson}`);

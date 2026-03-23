@@ -27,9 +27,23 @@ export function buildPromptCacheKey(
     .digest('hex');
 }
 
-export function shouldUseLowReasoningOpenAI(modelId: string): boolean {
+export type OpenAIReasoningEffort =
+  | 'none'
+  | 'minimal'
+  | 'low'
+  | 'medium'
+  | 'high'
+  | 'xhigh';
+
+export function getOpenAIReasoningEffort(modelId: string): OpenAIReasoningEffort | null {
   const normalized = modelId.toLowerCase();
-  return normalized.startsWith('gpt-5') || normalized.startsWith('o');
+
+  // GPT-5.4 family uses a newer effort enum that does not accept "minimal".
+  if (normalized.startsWith('gpt-5.4')) return 'low';
+
+  if (normalized.startsWith('gpt-5') || normalized.startsWith('o')) return 'minimal';
+
+  return null;
 }
 
 export function isMistralOcrModel(modelId: string): boolean {

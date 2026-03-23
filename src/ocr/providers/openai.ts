@@ -1,9 +1,9 @@
 import type { OCRModelRunRequest, OCRModelRunResult } from '../types';
 import {
   buildPromptCacheKey,
+  getOpenAIReasoningEffort,
   getRetryMaxOutputTokens,
   isLikelyTruncatedText,
-  shouldUseLowReasoningOpenAI,
 } from '../provider-utils';
 import { readTextFromOpenAIResponse } from '../text-readers';
 
@@ -48,8 +48,9 @@ export async function runOpenAIOCR(params: {
       prompt_cache_key: promptCacheKey,
     };
 
-    if (shouldUseLowReasoningOpenAI(request.modelId)) {
-      payload.reasoning = { effort: 'minimal' };
+    const reasoningEffort = getOpenAIReasoningEffort(request.modelId);
+    if (reasoningEffort) {
+      payload.reasoning = { effort: reasoningEffort };
     }
 
     const response = await fetch('https://api.openai.com/v1/responses', {

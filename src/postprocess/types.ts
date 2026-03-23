@@ -155,6 +155,29 @@ export interface ComparisonRecord {
     | null;
 }
 
+export interface MetricRangeStats {
+  count: number;
+  min: number | null;
+  p05: number | null;
+  p50: number | null;
+  p95: number | null;
+  max: number | null;
+  mean: number | null;
+  stddev: number | null;
+}
+
+export interface MetricRanges {
+  cost_per_doc_usd: MetricRangeStats;
+  cost_per_success_usd: MetricRangeStats;
+  success_pct_runs: MetricRangeStats;
+  success_pct_docs: MetricRangeStats;
+  pass_at_3_strict_pct_docs: MetricRangeStats;
+  pass_at_5_strict_pct_docs: MetricRangeStats;
+  critical_fields_pct: MetricRangeStats;
+  all_fields_pct: MetricRangeStats;
+  latency_ms: MetricRangeStats;
+}
+
 export interface AggregatedMetricRow {
   rank: number;
   model_key: string;
@@ -190,6 +213,7 @@ export interface AggregatedMetricRow {
   avg_cost_per_run_usd: number;
   cost_per_success_usd: number | null;
   p95_cost_usd: number;
+  metric_ranges?: MetricRanges;
 }
 
 export interface MetricsSnapshot {

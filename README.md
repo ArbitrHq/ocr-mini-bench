@@ -170,7 +170,7 @@ These produce:
 
 - raw run output (`raw.jsonl`)
 - ground-truth comparison output
-- final leaderboard/debug artifacts for visualization
+- final leaderboard/debug artifacts for visualization (`leaderboard.frontend.json` includes per-row `metric_ranges`)
 
 For legacy checkpoints that only have `runs.jsonl`, you can still build raw with:
 
