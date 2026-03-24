@@ -213,3 +213,77 @@ Primary outputs under `artifacts/`:
 - Metrics: `postprocess/metrics.snapshot.json`
 - Leaderboard: `postprocess/leaderboard.aggregation.json`, `postprocess/leaderboard.frontend.json`
 - Debug and snapshots from run: `latest.debug.json`, `snapshot-*.debug.json`, `latest.json`, `snapshot-*.json`
+
+## Development
+
+### Running tests
+
+```bash
+npm test              # run all tests
+npm run test:watch    # watch mode
+npm run typecheck     # TypeScript type checking
+```
+
+### Adding a new model
+
+1. Add the model to `config/models.public.json`:
+
+```json
+{
+  "provider": "openai",
+  "model_id": "gpt-6-mini",
+  "model_label": "GPT-6 mini",
+  "tier": "balanced"
+}
+```
+
+2. Make sure the corresponding API key is in `.env`:
+
+```
+OPENAI_API_KEY=sk-...
+```
+
+3. Run with the new model:
+
+```bash
+npm run benchmark:run -- --models="GPT-6 mini" --runs=1 --docs-per-domain=1
+```
+
+Supported providers: `openai`, `anthropic`, `google`, `mistral`
+
+Tiers: `budget`, `balanced`, `sota` (used for leaderboard grouping)
+
+### Adding a new provider
+
+Provider implementations live in `src/ocr/providers/`. To add a new provider:
+
+1. Create `src/ocr/providers/<provider>.ts` implementing the OCR interface
+2. Add the provider to `src/ocr/runner.ts`
+3. Add the API key to `.env.example`
+4. Add models to `config/models.public.json`
+
+### Project structure
+
+```
+src/
+├── benchmark/           # Benchmark orchestration and scoring
+│   ├── scoring/         # Match logic, text normalization
+│   └── run/             # Parallelization, progress, aggregation
+├── cli/                 # CLI entry points
+│   └── postprocess/     # Post-processing CLIs
+├── config/              # Centralized paths
+├── lib/                 # Shared utilities (type guards, errors)
+├── ocr/                 # OCR provider implementations
+│   └── providers/       # OpenAI, Anthropic, Google, Mistral
+└── postprocess/         # Raw/comparison/metrics transforms
+
+config/
+└── models.public.json   # Model definitions
+
+dataset/
+├── manifest.json        # Document registry
+└── <domain>/            # PDFs and ground truth per domain
+
+prompts/
+└── ocr/benchmark/       # System and user prompts
+```

@@ -8,5 +8,5 @@ Rules:
 - If not found, return an empty value and set found=false.
 - If obvious letters are missing due to clip-off or fade; fill them in.
 - Do not invent keys.
-- dateformate: YYYY-MM-DD.
+- date format: YYYY-MM-DD.
 - Do not add explanations outside JSON.

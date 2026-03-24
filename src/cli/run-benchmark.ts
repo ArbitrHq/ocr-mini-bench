@@ -8,6 +8,7 @@ import type { BenchmarkDebugRun, BenchmarkRunOptions, SingleRunMetrics } from '.
 import type { RawNormalizedRecord } from '../postprocess/types';
 import { fromCheckpointRecord } from '../postprocess/raw-contract';
 import { writeJsonLinesFile } from '../postprocess/io';
+import { PATHS } from '../config/paths';
 
 type CliArgs = {
   runsPerModel?: number;
@@ -55,10 +56,32 @@ function wantsHelp(argv: string[]): boolean {
   return argv.includes('--help') || argv.includes('-h');
 }
 
+const KNOWN_FLAGS = new Set([
+  '--runs',
+  '--parallel',
+  '--provider-parallel',
+  '--no-provider-parallel',
+  '--docs-per-domain',
+  '--domains',
+  '--models',
+  '--output-dir',
+  '--checkpoint-dir',
+  '--resume',
+  '--retry-failed',
+  '--help',
+  '-h',
+]);
+
+function isKnownFlag(arg: string): boolean {
+  if (KNOWN_FLAGS.has(arg)) return true;
+  const flagName = arg.split('=')[0];
+  return KNOWN_FLAGS.has(flagName);
+}
+
 function parseArgs(argv: string[]): CliArgs {
   const out: CliArgs = {
-    outputDir: path.resolve(process.cwd(), 'artifacts'),
-    checkpointDir: path.resolve(process.cwd(), 'artifacts/checkpoints'),
+    outputDir: PATHS.artifacts.root,
+    checkpointDir: PATHS.artifacts.checkpoints,
     resume: false,
     retryFailed: false,
   };
@@ -121,6 +144,11 @@ function parseArgs(argv: string[]): CliArgs {
     }
     if (arg === '--retry-failed') {
       out.retryFailed = true;
+      continue;
+    }
+    // Warn about unknown flags
+    if (arg.startsWith('-') && !isKnownFlag(arg)) {
+      console.warn(`Warning: Unknown flag "${arg}". Run --help for available options.`);
     }
   }
 
@@ -206,10 +234,10 @@ async function computeBenchmarkFingerprint(options: BenchmarkRunOptions): Promis
   hash.update(JSON.stringify(normalizeOptionsForCompare(options)));
 
   const files = [
-    path.resolve(process.cwd(), 'config/models.public.json'),
-    path.resolve(process.cwd(), 'dataset/manifest.json'),
-    path.resolve(process.cwd(), 'prompts/ocr/benchmark/extract_system.txt'),
-    path.resolve(process.cwd(), 'prompts/ocr/benchmark/extract_user.txt'),
+    PATHS.config.models,
+    PATHS.dataset.manifest,
+    PATHS.prompts.system,
+    PATHS.prompts.user,
   ];
 
   for (const filePath of files) {

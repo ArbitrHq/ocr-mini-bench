@@ -18,9 +18,4 @@ export function buildBenchmarkId(): string {
 export function toRepoRelativePath(absPath: string, repoRoot: string): string {
   return path.relative(repoRoot, absPath).split(path.sep).join('/');
 }
-
-export function toErrorMessage(error: unknown): string {
-  if (error instanceof Error) return error.message;
-  return 'Model run failed.';
-}
 import path from 'node:path';

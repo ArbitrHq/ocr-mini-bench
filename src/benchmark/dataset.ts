@@ -7,11 +7,7 @@ import type {
   PreparedBenchmarkDocument,
 } from './types';
 import { normalizeGroundTruthDocument } from './normalize-ground-truth';
-
-const BENCHMARK_ROOT = process.cwd();
-
-const MANIFEST_PATH = path.resolve(BENCHMARK_ROOT, 'dataset/manifest.json');
-const CONFIG_PATH = path.resolve(BENCHMARK_ROOT, 'config/models.public.json');
+import { PATHS, REPO_ROOT } from '../config/paths';
 
 async function readJsonFile<T>(targetPath: string): Promise<T> {
   const raw = await fs.readFile(targetPath, 'utf8');
@@ -23,11 +19,11 @@ function normalizeDomain(value: string): string {
 }
 
 export async function loadBenchmarkConfig(): Promise<BenchmarkConfig> {
-  return readJsonFile<BenchmarkConfig>(CONFIG_PATH);
+  return readJsonFile<BenchmarkConfig>(PATHS.config.models);
 }
 
 export async function loadBenchmarkManifest(): Promise<BenchmarkManifest> {
-  return readJsonFile<BenchmarkManifest>(MANIFEST_PATH);
+  return readJsonFile<BenchmarkManifest>(PATHS.dataset.manifest);
 }
 
 export async function loadPreparedDocuments(options?: {
@@ -55,8 +51,8 @@ export async function loadPreparedDocuments(options?: {
         : domain.documents.slice(0, maxDocumentsPerDomain);
 
     for (const document of selectedDocuments) {
-      const sourceAbs = path.resolve(process.cwd(), document.source_pdf);
-      const gtAbs = path.resolve(process.cwd(), document.ground_truth);
+      const sourceAbs = path.resolve(REPO_ROOT, document.source_pdf);
+      const gtAbs = path.resolve(REPO_ROOT, document.ground_truth);
       const rawGroundTruth = await readJsonFile<unknown>(gtAbs);
       const groundTruth = normalizeGroundTruthDocument(rawGroundTruth, {
         documentId: document.document_id,

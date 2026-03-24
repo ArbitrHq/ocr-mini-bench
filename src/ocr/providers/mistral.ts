@@ -9,6 +9,13 @@ import {
   readMistralOcrMarkdown,
   readTextFromMistralChatResponse,
 } from '../text-readers';
+import {
+  isRecord,
+  getRecordProperty,
+  getStringProperty,
+  getNumberProperty,
+  getArrayProperty,
+} from '../../lib/type-guards';
 
 export async function runMistralOCR(params: {
   request: OCRModelRunRequest;
@@ -67,13 +74,14 @@ export async function runMistralOCR(params: {
       }),
     });
 
-    const ocrData = (await ocrResponse.json()) as Record<string, unknown>;
+    const ocrData: unknown = await ocrResponse.json();
+    if (!isRecord(ocrData)) {
+      throw new Error('Mistral OCR request returned invalid response.');
+    }
     if (!ocrResponse.ok) {
-      const error =
-        ocrData.error && typeof ocrData.error === 'object'
-          ? (ocrData.error as Record<string, unknown>).message
-          : null;
-      throw new Error(typeof error === 'string' ? error : 'Mistral OCR request failed.');
+      const errorObj = getRecordProperty(ocrData, 'error');
+      const errorMessage = errorObj ? getStringProperty(errorObj, 'message') : undefined;
+      throw new Error(errorMessage ?? 'Mistral OCR request failed.');
     }
 
     const annotationText = readMistralOcrAnnotationAsText(ocrData);
@@ -87,11 +95,8 @@ export async function runMistralOCR(params: {
         markdown: markdownText,
       });
 
-    const usageInfo =
-      ocrData.usage_info && typeof ocrData.usage_info === 'object'
-        ? (ocrData.usage_info as Record<string, unknown>)
-        : null;
-    const pagesProcessed = usageInfo ? Number(usageInfo.pages_processed || 0) : 0;
+    const usageInfo = getRecordProperty(ocrData, 'usage_info');
+    const pagesProcessed = usageInfo ? getNumberProperty(usageInfo, 'pages_processed') ?? 0 : 0;
     const hasAnnotation = Boolean(annotationText);
     const perPageCost = hasAnnotation ? MISTRAL_OCR_ANNOTATED_COST_PER_PAGE_USD : MISTRAL_OCR_COST_PER_PAGE_USD;
     const totalCostUsd = Math.max(0, pagesProcessed) * perPageCost;
@@ -124,21 +129,21 @@ export async function runMistralOCR(params: {
     }),
   });
 
-  const ocrData = (await ocrResponse.json()) as Record<string, unknown>;
+  const ocrData: unknown = await ocrResponse.json();
+  if (!isRecord(ocrData)) {
+    throw new Error('Mistral OCR request returned invalid response.');
+  }
   if (!ocrResponse.ok) {
-    const error =
-      ocrData.error && typeof ocrData.error === 'object'
-        ? (ocrData.error as Record<string, unknown>).message
-        : null;
-    throw new Error(typeof error === 'string' ? error : 'Mistral OCR request failed.');
+    const errorObj = getRecordProperty(ocrData, 'error');
+    const errorMessage = errorObj ? getStringProperty(errorObj, 'message') : undefined;
+    throw new Error(errorMessage ?? 'Mistral OCR request failed.');
   }
 
-  const pages = Array.isArray(ocrData.pages) ? ocrData.pages : [];
+  const pages = getArrayProperty(ocrData, 'pages') ?? [];
   const ocrMarkdown = pages
     .map((page) => {
-      if (!page || typeof page !== 'object') return '';
-      const pageObj = page as Record<string, unknown>;
-      return typeof pageObj.markdown === 'string' ? pageObj.markdown : '';
+      if (!isRecord(page)) return '';
+      return getStringProperty(page, 'markdown') ?? '';
     })
     .filter(Boolean)
     .join('\n\n');
@@ -166,22 +171,22 @@ export async function runMistralOCR(params: {
     }),
   });
 
-  const chatData = (await chatResponse.json()) as Record<string, unknown>;
+  const chatData: unknown = await chatResponse.json();
+  if (!isRecord(chatData)) {
+    throw new Error('Mistral chat request returned invalid response.');
+  }
   if (!chatResponse.ok) {
-    const error =
-      chatData.error && typeof chatData.error === 'object'
-        ? (chatData.error as Record<string, unknown>).message
-        : null;
-    throw new Error(typeof error === 'string' ? error : 'Mistral chat request failed.');
+    const errorObj = getRecordProperty(chatData, 'error');
+    const errorMessage = errorObj ? getStringProperty(errorObj, 'message') : undefined;
+    throw new Error(errorMessage ?? 'Mistral chat request failed.');
   }
 
-  const usage =
-    chatData.usage && typeof chatData.usage === 'object' ? (chatData.usage as Record<string, unknown>) : null;
+  const usage = getRecordProperty(chatData, 'usage');
 
   return {
     text: readTextFromMistralChatResponse(chatData),
-    inputTokens: usage ? Number(usage.prompt_tokens || 0) : 0,
-    outputTokens: usage ? Number(usage.completion_tokens || 0) : 0,
+    inputTokens: usage ? getNumberProperty(usage, 'prompt_tokens') ?? 0 : 0,
+    outputTokens: usage ? getNumberProperty(usage, 'completion_tokens') ?? 0 : 0,
     latencyMs: Date.now() - startedAt,
     cachedInputTokens: 0,
     cacheHit: false,

@@ -10,6 +10,7 @@ import type {
   MetricsSnapshot,
 } from '../../postprocess/types';
 import { readJsonLinesFile, timestampForFilename, writeJsonFile } from '../../postprocess/io';
+import { PATHS } from '../../config/paths';
 
 type CliArgs = {
   comparisonJsonl: string;
@@ -42,14 +43,12 @@ function wantsHelp(argv: string[]): boolean {
 }
 
 function parseArgs(argv: string[]): CliArgs {
-  const defaultDir = path.resolve(process.cwd(), 'artifacts/postprocess');
-
   const out: CliArgs = {
-    comparisonJsonl: path.resolve(defaultDir, 'comparison.jsonl'),
-    rawJsonl: path.resolve(defaultDir, 'raw.jsonl'),
-    outputMetricsJson: path.resolve(defaultDir, 'metrics.snapshot.json'),
-    outputAggregationJson: path.resolve(defaultDir, 'leaderboard.aggregation.json'),
-    outputFrontendJson: path.resolve(defaultDir, 'leaderboard.frontend.json'),
+    comparisonJsonl: PATHS.postprocess.comparisonJsonl,
+    rawJsonl: PATHS.postprocess.rawJsonl,
+    outputMetricsJson: PATHS.postprocess.metricsSnapshot,
+    outputAggregationJson: PATHS.postprocess.leaderboardAggregation,
+    outputFrontendJson: PATHS.postprocess.leaderboardFrontend,
   };
 
   for (const arg of argv) {

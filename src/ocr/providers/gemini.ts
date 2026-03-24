@@ -2,6 +2,13 @@ import type { OCRModelRunRequest, OCRModelRunResult } from '../types';
 import { buildGeminiGeneratePayload } from '../gemini-cache';
 import { getRetryMaxOutputTokens, isLikelyTruncatedText } from '../provider-utils';
 import { readTextFromGeminiResponse } from '../text-readers';
+import {
+  isRecord,
+  getRecordProperty,
+  getStringProperty,
+  getNumberProperty,
+  getArrayProperty,
+} from '../../lib/type-guards';
 
 export async function runGeminiOCR(params: {
   request: OCRModelRunRequest;
@@ -30,28 +37,27 @@ export async function runGeminiOCR(params: {
       }
     );
 
-    const geminiData = (await geminiResponse.json()) as Record<string, unknown>;
+    const geminiData: unknown = await geminiResponse.json();
+    if (!isRecord(geminiData)) {
+      throw new Error('Gemini request returned invalid response.');
+    }
     if (!geminiResponse.ok) {
-      const error =
-        geminiData.error && typeof geminiData.error === 'object'
-          ? (geminiData.error as Record<string, unknown>).message
-          : null;
-      throw new Error(typeof error === 'string' ? error : 'Gemini request failed.');
+      const errorObj = getRecordProperty(geminiData, 'error');
+      const errorMessage = errorObj ? getStringProperty(errorObj, 'message') : undefined;
+      throw new Error(errorMessage ?? 'Gemini request failed.');
     }
     return geminiData;
   };
 
   let geminiData = await runGemini(maxOutputTokens);
   let geminiText = readTextFromGeminiResponse(geminiData);
-  const geminiCandidates = Array.isArray(geminiData.candidates) ? geminiData.candidates : [];
-  const firstGeminiCandidate =
-    geminiCandidates.length > 0 && typeof geminiCandidates[0] === 'object' && geminiCandidates[0]
-      ? (geminiCandidates[0] as Record<string, unknown>)
-      : null;
-  const finishReason =
-    firstGeminiCandidate && typeof firstGeminiCandidate.finishReason === 'string'
-      ? firstGeminiCandidate.finishReason
-      : '';
+  const geminiCandidates = getArrayProperty(geminiData, 'candidates') ?? [];
+  const firstGeminiCandidate = geminiCandidates.length > 0 && isRecord(geminiCandidates[0])
+    ? geminiCandidates[0]
+    : undefined;
+  const finishReason = firstGeminiCandidate
+    ? getStringProperty(firstGeminiCandidate, 'finishReason') ?? ''
+    : '';
 
   if (finishReason === 'MAX_TOKENS' || isLikelyTruncatedText(geminiText)) {
     const retryMax = getRetryMaxOutputTokens(maxOutputTokens);
@@ -61,16 +67,13 @@ export async function runGeminiOCR(params: {
     }
   }
 
-  const usageMetadata =
-    geminiData.usageMetadata && typeof geminiData.usageMetadata === 'object'
-      ? (geminiData.usageMetadata as Record<string, unknown>)
-      : null;
-  const cachedInputTokens = usageMetadata ? Number(usageMetadata.cachedContentTokenCount || 0) : 0;
+  const usageMetadata = getRecordProperty(geminiData, 'usageMetadata');
+  const cachedInputTokens = usageMetadata ? getNumberProperty(usageMetadata, 'cachedContentTokenCount') ?? 0 : 0;
 
   return {
     text: geminiText,
-    inputTokens: usageMetadata ? Number(usageMetadata.promptTokenCount || 0) : 0,
-    outputTokens: usageMetadata ? Number(usageMetadata.candidatesTokenCount || 0) : 0,
+    inputTokens: usageMetadata ? getNumberProperty(usageMetadata, 'promptTokenCount') ?? 0 : 0,
+    outputTokens: usageMetadata ? getNumberProperty(usageMetadata, 'candidatesTokenCount') ?? 0 : 0,
     latencyMs: Date.now() - startedAt,
     cachedInputTokens,
     cacheHit: cachedInputTokens > 0,

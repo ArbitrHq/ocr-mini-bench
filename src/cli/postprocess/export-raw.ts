@@ -2,6 +2,7 @@ import path from 'node:path';
 import type { LegacyCheckpointRecord, RawNormalizedRecord } from '../../postprocess/types';
 import { fromCheckpointRecord, fromDebugRun, toTaskKeyFromDebug } from '../../postprocess/raw-contract';
 import { readJsonFile, readJsonLinesFile, timestampForFilename, writeJsonFile, writeJsonLinesFile } from '../../postprocess/io';
+import { PATHS } from '../../config/paths';
 
 type CliArgs = {
   checkpointDir?: string;
@@ -35,11 +36,9 @@ function wantsHelp(argv: string[]): boolean {
 }
 
 function parseArgs(argv: string[]): CliArgs {
-  const defaultOutputDir = path.resolve(process.cwd(), 'artifacts/postprocess');
-
   const out: CliArgs = {
-    outputJsonl: path.resolve(defaultOutputDir, 'raw.jsonl'),
-    outputSummary: path.resolve(defaultOutputDir, 'raw.summary.json'),
+    outputJsonl: PATHS.postprocess.rawJsonl,
+    outputSummary: PATHS.postprocess.rawSummary,
   };
 
   for (const arg of argv) {
@@ -70,7 +69,7 @@ function parseArgs(argv: string[]): CliArgs {
   }
 
   if (!out.checkpointDir && !out.debugFile) {
-    out.checkpointDir = path.resolve(process.cwd(), 'artifacts/checkpoints');
+    out.checkpointDir = PATHS.checkpoint.root;
   }
 
   return out;

@@ -1,4 +1,5 @@
 import type { GroundTruthDocument, GroundTruthKey, KeyMatchMode } from './types';
+import { isRecord, hasProperty } from '../lib/type-guards';
 
 const VALID_MATCH_MODES = new Set<KeyMatchMode>(['exact', 'normalized_text', 'contains', 'numeric']);
 
@@ -65,12 +66,8 @@ function normalizeExpected(value: unknown): string | string[] | null {
   return String(value);
 }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
-}
-
 function isValueNode(value: unknown): value is ValueNode {
-  return isRecord(value) && Object.prototype.hasOwnProperty.call(value, 'value');
+  return hasProperty(value, 'value');
 }
 
 function inferMatchMode(typeHint: unknown): KeyMatchMode {

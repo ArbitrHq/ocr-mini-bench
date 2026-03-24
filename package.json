@@ -16,7 +16,9 @@
     "postprocess:compare": "node --import tsx src/cli/postprocess/compare.ts",
     "postprocess:metrics": "node --import tsx src/cli/postprocess/metrics.ts",
     "ui:serve": "node scripts/serve_ui.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@types/node": "^20.19.16",
     "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.1"
   }
 }

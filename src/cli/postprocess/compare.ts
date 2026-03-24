@@ -3,6 +3,7 @@ import { loadPreparedDocuments } from '../../benchmark/dataset';
 import { scoreModelOutputDetailed } from '../../benchmark/scoring';
 import type { ComparisonRecord, RawNormalizedRecord } from '../../postprocess/types';
 import { fileExists, readJsonLinesFile, writeJsonFile, writeJsonLinesFile } from '../../postprocess/io';
+import { PATHS } from '../../config/paths';
 
 type CliArgs = {
   rawJsonl: string;
@@ -31,11 +32,10 @@ function wantsHelp(argv: string[]): boolean {
 }
 
 function parseArgs(argv: string[]): CliArgs {
-  const defaultDir = path.resolve(process.cwd(), 'artifacts/postprocess');
   const out: CliArgs = {
-    rawJsonl: path.resolve(defaultDir, 'raw.jsonl'),
-    outputJsonl: path.resolve(defaultDir, 'comparison.jsonl'),
-    outputSummary: path.resolve(defaultDir, 'comparison.summary.json'),
+    rawJsonl: PATHS.postprocess.rawJsonl,
+    outputJsonl: PATHS.postprocess.comparisonJsonl,
+    outputSummary: PATHS.postprocess.comparisonSummary,
   };
 
   for (const arg of argv) {

@@ -16,23 +16,14 @@ import {
   buildBenchmarkId,
   buildBenchmarkRunTaskKey,
   idForModel,
-  toErrorMessage,
   toRepoRelativePath,
 } from './run/identity';
 import { pct, round } from './run/math';
 import { runInPool } from './run/pool';
 import { runByProviderLanes } from './run/provider-lanes';
 import { createProgressReporter } from './run/progress';
-
-const BENCHMARK_SYSTEM_PROMPT_PATH = path.resolve(
-  process.cwd(),
-  'prompts/ocr/benchmark/extract_system.txt'
-);
-const BENCHMARK_USER_PROMPT_PATH = path.resolve(
-  process.cwd(),
-  'prompts/ocr/benchmark/extract_user.txt'
-);
-const REPO_ROOT = process.cwd();
+import { PATHS, REPO_ROOT } from '../config/paths';
+import { toErrorMessage } from '../lib/errors';
 
 export { buildBenchmarkRunTaskKey };
 
@@ -297,8 +288,8 @@ export async function runOCRLeaderboardBenchmark(
 ): Promise<BenchmarkSnapshot> {
   const [config, benchmarkSystemPromptTemplate, benchmarkUserPromptTemplate] = await Promise.all([
     loadBenchmarkConfig(),
-    fs.readFile(BENCHMARK_SYSTEM_PROMPT_PATH, 'utf8'),
-    fs.readFile(BENCHMARK_USER_PROMPT_PATH, 'utf8'),
+    fs.readFile(PATHS.prompts.system, 'utf8'),
+    fs.readFile(PATHS.prompts.user, 'utf8'),
   ]);
 
   const runsPerModel = Math.max(1, options.runs_per_model ?? config.default_runs_per_model);
