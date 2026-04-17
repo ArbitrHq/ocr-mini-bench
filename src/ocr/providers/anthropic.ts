@@ -8,6 +8,21 @@ import type {
   AnthropicUsageWithCache,
 } from './anthropic.types';
 
+function toErrorMessage(error: unknown): string {
+  if (error instanceof Error) return error.message;
+  if (typeof error === 'string') return error;
+  if (error && typeof error === 'object' && 'message' in error) {
+    const message = (error as { message?: unknown }).message;
+    if (typeof message === 'string') return message;
+  }
+  return '';
+}
+
+function isTemperatureDeprecatedError(error: unknown): boolean {
+  const message = toErrorMessage(error).toLowerCase();
+  return message.includes('temperature') && message.includes('deprecated');
+}
+
 export async function runAnthropicOCR(params: {
   request: OCRModelRunRequest;
   apiKey: string;
@@ -22,7 +37,6 @@ export async function runAnthropicOCR(params: {
     request.userPrompt,
     request.pdfBase64
   );
-
   const systemBlocks: CacheableTextBlockParam[] = [
     {
       type: 'text',
@@ -51,17 +65,30 @@ export async function runAnthropicOCR(params: {
     ],
   };
 
-  const response = await client.messages.create({
+  // Type assertions needed because SDK types don't include cache_control yet
+  const system = systemBlocks as unknown as Anthropic.Messages.TextBlockParam[];
+  const messages = [userMessage as unknown as Anthropic.Messages.MessageParam];
+
+  const basePayload = {
     model: request.modelId,
-    temperature: 0,
     max_tokens: maxOutputTokens,
-    // Type assertions needed because SDK types don't include cache_control yet
-    system: systemBlocks as Anthropic.Messages.TextBlockParam[],
-    messages: [userMessage as Anthropic.Messages.MessageParam],
+    system,
+    messages,
     metadata: {
       user_id: `ocr-${promptCacheKey.slice(0, 24)}`,
     },
-  });
+  } satisfies Anthropic.Messages.MessageCreateParamsNonStreaming;
+
+  let response: Anthropic.Messages.Message;
+  try {
+    response = await client.messages.create({
+      ...basePayload,
+      temperature: 0,
+    });
+  } catch (error: unknown) {
+    if (!isTemperatureDeprecatedError(error)) throw error;
+    response = await client.messages.create(basePayload);
+  }
 
   const usage = response.usage as AnthropicUsageWithCache;
   const cacheReadTokens = usage.cache_read_input_tokens ?? 0;
