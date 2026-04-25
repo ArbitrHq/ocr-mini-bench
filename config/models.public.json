@@ -40,6 +40,12 @@
       "tier": "sota"
     },
     {
+      "provider": "openai",
+      "model_id": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "tier": "sota"
+    },
+    {
       "provider": "anthropic",
       "model_id": "claude-haiku-4-5",
       "model_label": "Claude Haiku 4.5",

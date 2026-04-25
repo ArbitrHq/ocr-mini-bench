@@ -25,6 +25,7 @@ const PRICING_REGISTRY: Record<string, ModelPricing> = {
   'gpt-5-nano': { input: 0.05, output: 0.4 },
   'gpt-5.4-mini': { input: 0.75, output: 4.5 },
   'gpt-5.4-nano': { input: 0.2, output: 1.25 },
+  'gpt-5.5': { input: 5.0, output: 30.0 },
   'gpt-5-pro': { input: 15.0, output: 120.0 },
   'gpt-4.1': { input: 2.0, output: 8.0 },
   'gpt-4.1-mini': { input: 0.4, output: 1.6 },

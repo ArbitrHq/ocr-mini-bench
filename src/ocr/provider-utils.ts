@@ -38,8 +38,8 @@ export type OpenAIReasoningEffort =
 export function getOpenAIReasoningEffort(modelId: string): OpenAIReasoningEffort | null {
   const normalized = modelId.toLowerCase();
 
-  // GPT-5.4 family uses a newer effort enum that does not accept "minimal".
-  if (normalized.startsWith('gpt-5.4')) return 'low';
+  // GPT-5.4 and GPT-5.5 families use a newer effort enum that does not accept "minimal".
+  if (normalized.startsWith('gpt-5.4') || normalized.startsWith('gpt-5.5')) return 'low';
 
   if (normalized.startsWith('gpt-5') || normalized.startsWith('o')) return 'minimal';
 
