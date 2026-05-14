@@ -1,0 +1,236 @@
+{
+  "document_id": {
+    "value": "BL278367539",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "LogiTrans Global",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "BuildMat Solutions",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL278367539",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG3635209",
+    "critical": false,
+    "type": "string"
+  },
+  "export_reference": {
+    "value": "EXP-21904",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "ATLA",
+    "critical": false,
+    "type": "string"
+  },
+  "fmc_no": {
+    "value": "FMC-152329",
+    "critical": false,
+    "type": "string"
+  },
+  "forwarding_agent_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "forwarding_agent_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "forwarding_agent_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "forwarding_agent_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "precarriage_by": {
+    "value": "Atlas Global Shipping",
+    "critical": false,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "Los Angeles, USA (USLAXX)",
+    "critical": false,
+    "type": "string"
+  },
+  "type_of_movement": {
+    "value": "FCL/FCL PORT/PORT",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_payable_at": {
+    "value": "Los Angeles, USA (USLAXX)",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "STARLIGHT EXPRESS",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "513E",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "Los Angeles, USA (USLAXX)",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_delivery": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "COLLECT",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Atlas Global Shipping",
+    "critical": false,
+    "type": "string"
+  },
+  "declared_value": {
+    "value": "N.V.D",
+    "critical": false,
+    "type": "number"
+  },
+  "laden_on_board_date": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Los Angeles",
+    "critical": false,
+    "type": "string"
+  },
+  "total_packages": {
+    "value": 553,
+    "critical": true,
+    "type": "number"
+  },
+  "rate": {
+    "value": "As arranged",
+    "critical": false,
+    "type": "string"
+  },
+  "basis": {
+    "value": "per ctr",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "VNGU5907603",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL672813",
+      "marks": "N/M",
+      "number_of_packages": 553,
+      "package_type": "CARTONS",
+      "general_description": "GENERAL MERCHANDISE",
+      "commodity": "ELECTRONICS",
+      "packaging": "STANDARD SEAWORTHY EXPORT",
+      "gross_weight": {
+        "value": 20603,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 21,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38124544",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_number": {
+        "value": "SL672813",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+.env
+.DS_Store
+artifacts/
+# Keep the canonical example snapshot tree committed for reference.
+!artifacts/public-rc-gemini31/
+!artifacts/public-rc-gemini31/**
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+.coverage
+htmlcov/

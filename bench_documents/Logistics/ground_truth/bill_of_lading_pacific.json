@@ -1,0 +1,274 @@
+{
+  "document_id": {
+    "value": "BL328420653",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "COMBINED TRANSPORT BILL OF LADING",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "TechCorp Inc.",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "LogiTrans Global",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL328420653",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG8561764",
+    "critical": false,
+    "type": "string"
+  },
+  "export_reference": {
+    "value": "EXP-51512",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "CONT",
+    "critical": false,
+    "type": "string"
+  },
+  "point_and_country_of_origin": {
+    "value": "CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "precarriage_by": {
+    "value": "Continental Freightways",
+    "critical": false,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "Paxo, Greece (PAXOAA)",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "STARLIGHT EXPRESS",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "513E",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "Paxo, Greece (PAXOAA)",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "Dubai, UAE (AEDXBB)",
+    "critical": true,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "PREPAID",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Continental Freightways",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_and_charges": {
+    "value": "OCEAN FREIGHT TERMINAL HANDLING",
+    "critical": false,
+    "type": "date"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Paxo",
+    "critical": false,
+    "type": "string"
+  },
+  "total_packages": {
+    "value": 935,
+    "critical": true,
+    "type": "number"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "HLXU9614791",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL569957",
+      "number_of_packages": 510,
+      "package_type": "CARTONS STC",
+      "general_description": "FROZEN SEAFOOD",
+      "commodity": "FROZEN SEAFOOD",
+      "gross_weight": {
+        "value": 5268,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 49,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38128698",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temperature": "-18",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL569957",
+        "critical": true,
+        "type": "string"
+      }
+    },
+    {
+      "container_no": {
+        "value": "EICU1831266",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL695063",
+      "number_of_packages": 114,
+      "package_type": "CARTONS STC",
+      "general_description": "FROZEN SEAFOOD",
+      "commodity": "FROZEN SEAFOOD",
+      "gross_weight": {
+        "value": 23048,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 27,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38128698",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temperature": "-18",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL695063",
+        "critical": true,
+        "type": "string"
+      }
+    },
+    {
+      "container_no": {
+        "value": "ATLU7427585",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL91490",
+      "number_of_packages": 311,
+      "package_type": "CARTONS STC",
+      "general_description": "GENERAL MERCHANDISE",
+      "commodity": "ELECTRONICS",
+      "packaging": "STANDARD SEAWORTHY EXPORT",
+      "gross_weight": {
+        "value": 8248,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 42,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38129500",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_number": {
+        "value": "SL91490",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

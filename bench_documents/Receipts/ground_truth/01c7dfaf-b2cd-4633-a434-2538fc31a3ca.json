@@ -1,0 +1,101 @@
+{
+  "vendor_name": {
+    "value": "LC Waikiki",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-06-20",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 349.00,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 42.86,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 14.0,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 1,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "16:50",
+    "critical": true,
+    "type": "string"
+  },
+  "store_name": {
+    "value": "Almaza Mall",
+    "critical": false,
+    "type": "string"
+  },
+  "vat_registration_number": {
+    "value": "379-456-249",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_type": {
+    "value": "Sales Receipt",
+    "critical": false,
+    "type": "string"
+  },
+  "transaction_number": {
+    "value": "0000163103",
+    "critical": false,
+    "type": "string"
+  },
+  "pos_id": {
+    "value": "EG26POS04",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_number": {
+    "value": "260400000000136303",
+    "critical": false,
+    "type": "string"
+  },
+  "cashier_id": {
+    "value": "2383",
+    "critical": false,
+    "type": "string"
+  },
+  "pretax_amount": {
+    "value": 306.14,
+    "critical": false,
+    "type": "float"
+  },
+  "currency": {
+    "value": "EGP",
+    "critical": false,
+    "type": "string"
+  },
+  "payment_method": {
+    "value": "Card",
+    "critical": false,
+    "type": "string"
+  },
+  "amount_tendered": {
+    "value": 349.00,
+    "critical": false,
+    "type": "float"
+  },
+  "items": [
+    {
+      "item_name": "Jersey Trousers",
+      "item_id": "8683111037138",
+      "quantity": 1,
+      "unit_price": 349.00,
+      "total_price": 349.00
+    }
+  ]
+}

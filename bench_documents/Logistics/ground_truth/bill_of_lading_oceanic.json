@@ -1,0 +1,255 @@
+{
+  "document_id": {
+    "value": "BL808149415",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "TechCorp Inc.",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "LogiTrans Global",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL808149415",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG9425642",
+    "critical": false,
+    "type": "string"
+  },
+  "export_reference": {
+    "value": "EXP-19654",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "CONT",
+    "critical": false,
+    "type": "string"
+  },
+  "svc_contract": {
+    "value": "3153782",
+    "critical": false,
+    "type": "string"
+  },
+  "onward_inland_routing": {
+    "value": "Continental Freightways",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_name": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "Singapore, Singapore (SGSINN)",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "STARLIGHT EXPRESS",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "483E",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "Singapore, Singapore (SGSINN)",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_delivery": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "PREPAID",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Continental Freightways",
+    "critical": false,
+    "type": "string"
+  },
+  "laden_on_board_date": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Singapore",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_originals": {
+    "value": 3,
+    "critical": false,
+    "type": "number"
+  },
+  "total_packages": {
+    "value": 611,
+    "critical": true,
+    "type": "number"
+  },
+  "freight_currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "STLU4052921",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL415771",
+      "number_of_packages": 133,
+      "package_type": "CARTONS",
+      "general_description": "FROZEN SEAFOOD",
+      "commodity": "FROZEN SEAFOOD",
+      "gross_weight": {
+        "value": 19010,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 57,
+      "measurement_unit": "M3",
+      "hs_code": {
+        "value": "38125113",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temperature": "-18",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL415771",
+        "critical": true,
+        "type": "string"
+      }
+    },
+    {
+      "container_no": {
+        "value": "STLU4321664",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL864399",
+      "marks": "N/M",
+      "number_of_packages": 478,
+      "package_type": "CARTONS",
+      "general_description": "FROZEN SEAFOOD",
+      "commodity": "FROZEN SEAFOOD",
+      "packaging": null,
+      "gross_weight": {
+        "value": 11481,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 64,
+      "measurement_unit": "M3",
+      "hs_code": {
+        "value": "38124524",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temperature": "-18",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL864399",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

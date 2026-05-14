@@ -1,0 +1,143 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "BuildMat Solutions",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "12 Construction Way, London, E1 6AN",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+44 20 7946 0958",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_email": {
+      "value": "sales@buildmat.co.uk",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "GB987654321",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "GB98 7654 3210 9876",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "BARCGB22",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_company_number": {
+      "value": "09876543",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_website": {
+      "value": "www.buildmat.co.uk",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Vandenberg Group",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "99 Station Road, Chicago, IL 60601",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0777888999",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-6718",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 12915.71,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 2241.57,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 21,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 10674.14,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": [
+      "2",
+      "14"
+    ],
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "reference": {
+    "value": "REF-29127",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Switch replacement",
+      "quantity": 6,
+      "unit_price": 782.09,
+      "total_price": 4692.54
+    },
+    {
+      "item_name": "Project management",
+      "quantity": 8,
+      "unit_price": 747.7,
+      "total_price": 5981.6
+    }
+  ],
+  "campaign_id": {
+    "value": "CAMP-2026-Q4",
+    "critical": false,
+    "type": "string"
+  },
+  "account_executive": {
+    "value": "Emily Chen",
+    "critical": false,
+    "type": "string"
+  }
+}

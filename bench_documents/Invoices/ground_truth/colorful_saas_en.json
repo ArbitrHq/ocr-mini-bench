@@ -1,0 +1,139 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "BuildMat Solutions",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "12 Construction Way, London, E1 6AN",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+44 20 7946 0958",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_email": {
+      "value": "sales@buildmat.co.uk",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": null,
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "GB98 7654 3210 9876",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "BARCGB22",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_bank_name": {
+      "value": "Global Finance Bank",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Vandenberg Group",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "99 Station Road, Chicago, IL 60601",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0777888999",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-9384",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 5896.01,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 1023.27,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 21,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 4872.74,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": [
+      "3",
+      "16"
+    ],
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Fiber optic cabling",
+      "quantity": 4,
+      "unit_price": 107.97,
+      "total_price": 431.87
+    },
+    {
+      "item_name": "Cloud storage 1TB",
+      "quantity": 7,
+      "unit_price": 487.86,
+      "total_price": 3414.99
+    },
+    {
+      "item_name": "Security audit",
+      "quantity": 5,
+      "unit_price": 205.17,
+      "total_price": 1025.87
+    }
+  ],
+  "subscription_plan": {
+    "value": "Team Annual",
+    "critical": false,
+    "type": "string"
+  },
+  "renewal_date": {
+    "value": "2027-03-12",
+    "critical": false,
+    "type": "string"
+  }
+}

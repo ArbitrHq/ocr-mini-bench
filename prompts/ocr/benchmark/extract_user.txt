@@ -1,0 +1,4 @@
+Extract the requested fields from the attached PDF and return strict JSON.
+
+Output schema:
+{"pairs":[{"key":"exact_requested_key","value":"...","found":true}],"missing_keys":["..."],"notes":"optional"}

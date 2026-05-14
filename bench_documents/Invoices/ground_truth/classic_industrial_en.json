@@ -1,0 +1,145 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "LogiTrans Global",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "88 Harbor Road, Rotterdam, 3011 AA",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+31 10 123 4567",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_email": {
+      "value": "dispatch@logitrans.com",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "NL0456123789B01",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "NL45 6123 7890 4561",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "INGBNL2A",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Vandenberg Group",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "99 Station Road, Chicago, IL 60601",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0777888999",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-3302",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 19542.94,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 3391.75,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 21,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 16151.19,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": [
+      "4",
+      "30"
+    ],
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "invoice_reference": {
+    "value": "REF-16417",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Transport fee",
+      "quantity": 6,
+      "unit_price": 313.32,
+      "total_price": 1879.92
+    },
+    {
+      "item_name": "Project management",
+      "quantity": 9,
+      "unit_price": 751.07,
+      "total_price": 6759.66
+    },
+    {
+      "item_name": "Firewall setup",
+      "quantity": 6,
+      "unit_price": 588.14,
+      "total_price": 3528.84
+    },
+    {
+      "item_name": "Server maintenance",
+      "quantity": 9,
+      "unit_price": 442.53,
+      "total_price": 3982.77
+    }
+  ],
+  "project_code": {
+    "value": "PRJ-9446",
+    "critical": false,
+    "type": "string"
+  },
+  "site_manager": {
+    "value": "John Doe",
+    "critical": false,
+    "type": "string"
+  }
+}

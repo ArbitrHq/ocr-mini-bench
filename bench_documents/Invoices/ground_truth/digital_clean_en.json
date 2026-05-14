@@ -1,0 +1,124 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "TechCorp Inc.",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "145 Innovation Drive, San Francisco, CA 94105",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+1 (555) 123-4567",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_email": {
+      "value": "billing@techcorp.com",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "US123456789",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "US12 3456 7890 1234",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Vandenberg Group",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "99 Station Road, Chicago, IL 60601",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0777888999",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-9993",
+    "critical": true,
+    "type": "string"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 15113.46,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 2623.00,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 21,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 12490.46,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": 3,
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Database migration",
+      "quantity": 7,
+      "unit_price": 155.73,
+      "unit": "month",
+      "total_price": 1090.08
+    },
+    {
+      "item_name": "System backup",
+      "quantity": 8,
+      "unit_price": 1019.62,
+      "unit": "month",
+      "total_price": 8156.96
+    },
+    {
+      "item_name": "Software license (Annual)",
+      "quantity": 7,
+      "unit_price": 463.35,
+      "unit": "month",
+      "total_price": 3243.42
+    }
+  ],
+  "api_usage": {
+    "value": "4250k requests",
+    "critical": false,
+    "type": "string"
+  },
+  "workspace_id": {
+    "value": "WS-R6PUK6",
+    "critical": false,
+    "type": "string"
+  }
+}

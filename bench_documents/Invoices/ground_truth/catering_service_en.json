@@ -1,0 +1,146 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "LogiTrans Global",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "88 Harbor Road, Rotterdam, 3011 AA",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+31 10 123 4567",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_email": {
+      "value": "dispatch@logitrans.com",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "NL0456123789B01",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "NL45 6123 7890 4561",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "INGBNL2A",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Smith Logistics",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "5 Ring Avenue, Miami, FL 33101",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0222333444",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-0989",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 4231.20,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 511.20,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 3720.00,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": 4,
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Premium Buffet Menu",
+      "quantity": 50,
+      "unit_price": 45,
+      "VAT": 9,
+      "total_price": 2250
+    },
+    {
+      "item_name": "Beverage Package (Standard)",
+      "quantity": 50,
+      "unit_price": 15,
+      "VAT": 21,
+      "total_price": 750
+    },
+    {
+      "item_name": "Staffing (Waiters x3, 4hrs)",
+      "quantity": 12,
+      "unit_price": 35,
+      "VAT": 21,
+      "total_price": 420
+    },
+    {
+      "item_name": "Equipment Rental (Tables, Linens)",
+      "quantity": 1,
+      "unit_price": 300,
+      "VAT": 21,
+      "total_price": 300
+    }
+  ],
+  "event_date": {
+    "value": "2026-04-21",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_guests": {
+    "value": 50,
+    "critical": false,
+    "type": "number"
+  },
+  "dietary_notes": {
+    "value": "3x Vegan, 2x Gluten-Free, 1x Nut Allergy",
+    "critical": false,
+    "type": "string"
+  }
+}

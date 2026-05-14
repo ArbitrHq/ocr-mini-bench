@@ -1,0 +1,240 @@
+{
+  "document_id": {
+    "value": "BL232472785",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "FRUTAS DEL SOL S.A.",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "Av. de los Incas 456, Buenos Aires, Argentina",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+54 11 4789 1234",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "logistica@frutasdelsol.com.ar",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "FRESH FRUIT IMPORTERS B.V.",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "Handelsweg 12, 2988 DB Ridderkerk, Netherlands",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "FRESH FRUIT IMPORTERS B.V.",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "Handelsweg 12, 2988 DB Ridderkerk, Netherlands",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL232472785",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG5917532",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_ref": {
+    "value": "EXP-35782",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "MRDN",
+    "critical": false,
+    "type": "string"
+  },
+  "precarriage_by": {
+    "value": "Oceanic Meridian Lines",
+    "critical": false,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "Buenos Aires, Argentina",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_name": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "MERIDIAN LABREA",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "124N",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "Buenos Aires, Argentina",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "Rotterdam, Netherlands",
+    "critical": true,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "COLLECT",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Meridian Shipping",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Antwerp",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_originals": {
+    "value": 3,
+    "critical": false,
+    "type": "number"
+  },
+  "total_packages": {
+    "value": 40,
+    "critical": true,
+    "type": "number"
+  },
+  "freight_and_charges": {
+    "value": "OCEAN FREIGHT THC",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "MRDN4455667",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "MSK112233",
+      "marks": "PALLETIZED",
+      "number_of_packages": 20,
+      "package_type": "PALLETS STC",
+      "general_description": "FRESH FRUIT",
+      "commodity": "FRESH APPLES",
+      "packaging": "PALLETS",
+      "gross_weight": {
+        "value": 18500,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kgs",
+      "measurement": 28,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "08081080",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temp": "+2°C",
+      "seal_number": {
+        "value": "MSK112233",
+        "critical": true,
+        "type": "string"
+      }
+    },
+    {
+      "container_no": {
+        "value": "MRDN7788990",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "MSK445566",
+      "marks": "PALLETIZED",
+      "number_of_packages": 20,
+      "package_type": "PALLETS STC",
+      "general_description": "FRESH FRUIT",
+      "commodity": "FRESH PEARS",
+      "packaging": "PALLETS",
+      "gross_weight": {
+        "value": 19200,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 28,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "08083090",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temp": "+1°C",
+      "seal_number": {
+        "value": "MSK445566",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

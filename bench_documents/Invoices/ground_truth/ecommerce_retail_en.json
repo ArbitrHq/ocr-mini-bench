@@ -1,0 +1,122 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "ShopMart Services LLC",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "145 Innovation Drive, San Francisco, CA 94105",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+1 (555) 123-4567",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "US123456789",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "US12 3456 7890 1234",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "CHASUS33",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Johnson & Sons",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "1 Main Street, New York, NY 10001",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0111222333",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-0014",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 308.37,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 22.4,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 8,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 279.97,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": [
+      "2",
+      "3"
+    ],
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Wireless Noise Cancelling Headphones",
+      "product_serial": "UWJ8HMN5ZI",
+      "warranty": "12 months",
+      "quantity": 1,
+      "unit_price": 249.99,
+      "total_price": 249.99
+    },
+    {
+      "item_name": "USB-C Fast Charging Cable 2m",
+      "quantity": 2,
+      "product_serial": "1R887OOG3TB",
+      "warranty": "12 months",
+      "unit_price": 14.99,
+      "total_price": 29.98
+    }
+  ],
+  "shipping_charges": {
+    "value": 6,
+    "critical": false,
+    "type": "float"
+  }
+}

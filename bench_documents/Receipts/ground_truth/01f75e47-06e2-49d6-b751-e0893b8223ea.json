@@ -1,0 +1,124 @@
+{
+  "vendor_name": {
+    "value": "Defacto",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2021-10-26",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 1505.00,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 184.82,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 14.0,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 5,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": "15:42",
+    "critical": true,
+    "type": "string"
+  },
+  "store_name": {
+    "value": "Almaza City Center",
+    "critical": false,
+    "type": "string"
+  },
+  "store_address": {
+    "value": "Cairo - Egypt",
+    "critical": false,
+    "type": "string"
+  },
+  "payment_method": {
+    "value": "Credit Card",
+    "critical": false,
+    "type": "string"
+  },
+  "amount_tendered": {
+    "value": 1505.00,
+    "critical": false,
+    "type": "float"
+  },
+  "sale_number": {
+    "value": "0160 0339 5156 5554",
+    "critical": false,
+    "type": "string"
+  },
+  "sales_slip_number": {
+    "value": "12016/003/30000991/000137",
+    "critical": false,
+    "type": "string"
+  },
+  "vat_registration_number": {
+    "value": "447-567-098",
+    "critical": false,
+    "type": "string"
+  },
+  "barcode": {
+    "value": "016003395156 5554",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Coat/Parka",
+      "item_id: ": "RO377AZ",
+      "barcode": "8682446581309",
+      "quantity": 1,
+      "unit_price": 899.00,
+      "discount": 0.00,
+      "total_price": 899.00
+    },
+    {
+      "item_name": "Pullover",
+      "item_id": "I6913AZ",
+      "barcode": "8682863158139",
+      "quantity": 1,
+      "unit_price": 199.00,
+      "discount": 0.00,
+      "total_price": 199.00
+    },
+    {
+      "item_name": "Tunic",
+      "item_id": "I7130AZ",
+      "barcode": "8682863782358",
+      "quantity": 1,
+      "unit_price": 249.00,
+      "discount": 0.00,
+      "total_price": 249.00
+    },
+    {
+      "item_name": "Low Cut Socks",
+      "item_id": "T7178AZ",
+      "barcode": "8682864239134",
+      "quantity": 1,
+      "unit_price": 149.00,
+      "discount": -64.32,
+      "total_price": 84.68
+    },
+    {
+      "item_name": "Low Cut Socks",
+      "item_id": "J8298AZ",
+      "barcode": "8682864729567",
+      "quantity": 1,
+      "unit_price": 129.00,
+      "discount": -55.68,
+      "total_price": 73.32
+    }
+  ]
+}

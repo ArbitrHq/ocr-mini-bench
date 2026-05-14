@@ -1,0 +1,104 @@
+{
+  "vendor_name": {
+    "value": "Butcher's Burger",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-12-31",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 450.72,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 55.36,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 14,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": [
+      "5",
+      "7"
+    ],
+    "critical": true,
+    "type": "integer"
+  },
+  "store_name": {
+    "value": "Butcher's Burger (El Korba)",
+    "critical": false,
+    "type": "string"
+  },
+  "store_phone": {
+    "value": "01211113300",
+    "critical": false,
+    "type": "string"
+  },
+  "table_number": {
+    "value": "84",
+    "critical": false,
+    "type": "string"
+  },
+  "order_number": {
+    "value": "2",
+    "critical": false,
+    "type": "string"
+  },
+  "receipt_time": {
+    "value": "22:26",
+    "critical": false,
+    "type": "string"
+  },
+  "service_type": {
+    "value": "Table Service",
+    "critical": false,
+    "type": "string"
+  },
+  "service_charge": {
+    "value": 42.36,
+    "critical": false,
+    "type": "float"
+  },
+  "items": [
+    {
+      "item_name": "Standard Cheese Burger",
+      "quantity": 2,
+      "total_price": 198,
+      "modifiers": []
+    },
+    {
+      "item_name": "Go Meal Fries",
+      "quantity": 1,
+      "unit_price": 44,
+      "total_price": 44,
+      "modifiers": [
+        {
+          "name": "Extra Cheese Sauce Gorgonzola",
+          "price": 19
+        }
+      ]
+    },
+    {
+      "item_name": "Go Meal Fries",
+      "quantity": 1,
+      "unit_price": 44,
+      "total_price": 44,
+      "modifiers": []
+    },
+    {
+      "item_name": "Cola",
+      "quantity": 2,
+      "unit_price": 24,
+      "total_price": 48,
+      "modifiers": []
+    }
+  ]
+}

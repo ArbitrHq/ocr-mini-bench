@@ -1,0 +1,156 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "City General Hospital",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "12 Construction Way, London, E1 6AN",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+44 20 7946 0958",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "GB987654321",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "GB98 7654 3210 9876",
+      "critical": true,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Peters LLC",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "14 Church Square, Boston, MA 02108",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0444555666",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_customer_number": {
+      "value": "CUST-2045",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "INV-2026-6981",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "2026-03-12",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "2026-04-11",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 355.2,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 133.2,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 6,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 2220,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": 3,
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "USD",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Emergency Room Level 3 (CPT 99283)",
+      "date": "2026-03-12",
+      "quantity": 1,
+      "total_price": 1250
+    },
+    {
+      "item_name": "CT Scan Head/Brain w/o Dye (CPT 70450)",
+      "date": "2026-03-12",
+      "quantity": 1,
+      "total_price": 850
+    },
+    {
+      "item_name": "Basic Metabolic Panel (CPT 80048)",
+      "date": "2026-03-12",
+      "quantity": 1,
+      "total_price": 120
+    }
+  ],
+  "patient_dob": {
+    "value": "1985-04-12",
+    "critical": false,
+    "type": "date"
+  },
+  "insurance_provider": {
+    "value": "BlueCross Health",
+    "critical": false,
+    "type": "string"
+  },
+  "policy_number": {
+    "value": "BC48001293",
+    "critical": false,
+    "type": "string"
+  },
+  "group_number": {
+    "value": "GRP7522",
+    "critical": false,
+    "type": "string"
+  },
+  "provider_npi": {
+    "value": "1325040691",
+    "critical": false,
+    "type": "string"
+  },
+  "diagnoses": {
+    "value": "R51.9 (Headache, unspecified), R42 (Dizziness and giddiness)",
+    "critical": false,
+    "type": "string"
+  },
+  "insurance_payment": {
+    "value": 1776,
+    "critical": false,
+    "type": "float"
+  },
+  "insurance_adjustments": {
+    "value": 222,
+    "critical": false,
+    "type": "float"
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "sender": {
+    "sender_name": {
+      "value": "LogiTrans Global",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_address": {
+      "value": "88 Harbor Road, Rotterdam, 3011 AA",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_phone": {
+      "value": "+31 10 123 4567",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_vat": {
+      "value": "NL0456123789B01",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bank_account_number": {
+      "value": "NL45 6123 7890 4561",
+      "critical": true,
+      "type": "string"
+    },
+    "sender_bic": {
+      "value": "INGBNL2A",
+      "critical": false,
+      "type": "string"
+    },
+    "sender_system_id": {
+      "value": "45612378",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "receiver": {
+    "receiver_name": {
+      "value": "Vandenberg Group",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_address": {
+      "value": "99 Station Road, Chicago, IL 60601",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_vat": {
+      "value": "US0777888999",
+      "critical": true,
+      "type": "string"
+    },
+    "receiver_customer_number": {
+      "value": "CUST-3099",
+      "critical": false,
+      "type": "string"
+    }
+  },
+  "invoice_number": {
+    "value": "SYS-0120267/EUR",
+    "critical": true,
+    "type": "string"
+  },
+  "invoice_date": {
+    "value": "12/03/2026",
+    "critical": false,
+    "type": "date"
+  },
+  "due_date": {
+    "value": "26/04/2026",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 79712.41,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax_amount": {
+    "value": 9170.45,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": 13,
+    "critical": true,
+    "type": "float"
+  },
+  "pretax_amount": {
+    "value": 70541.95,
+    "critical": false,
+    "type": "float"
+  },
+  "total_number_of_items": {
+    "value": 15,
+    "critical": true,
+    "type": "integer"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "reference": {
+    "value": "PO-458174",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "pos": 10,
+      "item_name": "Hardware installation",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 45,
+      "uom": "month",
+      "unit_price": 198.75,
+      "net_price": 198.75,
+      "total_price": 8943.54,
+      "sku": "L2LQ-3796",
+      "discount": 0
+    },
+    {
+      "pos": 20,
+      "item_name": "Database migration",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 34,
+      "uom": "month",
+      "unit_price": 109.85,
+      "net_price": 109.85,
+      "total_price": 3734.73,
+      "sku": "GMRE-9684",
+      "discount": 0
+    },
+    {
+      "pos": 30,
+      "item_name": "Software license (Annual)",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 19,
+      "uom": "hour",
+      "unit_price": 315.98,
+      "net_price": 315.98,
+      "total_price": 5703.5,
+      "sku": "RK4M-7211",
+      "discount": 5
+    },
+    {
+      "pos": 40,
+      "item_name": "Firewall setup",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 33,
+      "uom": "hour",
+      "unit_price": 291.73,
+      "net_price": 291.73,
+      "total_price": 9627.14,
+      "sku": "M2IQ-2849",
+      "discount": 0
+    },
+    {
+      "pos": 50,
+      "item_name": "System backup",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 29,
+      "uom": "month",
+      "unit_price": 283.58,
+      "net_price": 283.58,
+      "total_price": 8223.96,
+      "sku": "5ANP-547",
+      "discount": 0,
+      "serial_number": "SN-TCS19DAO"
+    },
+    {
+      "pos": 60,
+      "item_name": "System backup",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 2,
+      "uom": "kg",
+      "unit_price": 111.12,
+      "net_price": 111.12,
+      "total_price": 222.24,
+      "sku": "ZKFX-3876",
+      "discount": 0
+    },
+    {
+      "pos": 70,
+      "item_name": "System backup",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 11,
+      "uom": "kg",
+      "unit_price": 24.46,
+      "net_price": 24.46,
+      "total_price": 269.04,
+      "sku": "RR0L-5854",
+      "discount": 0,
+      "serial_number": "SN-YWFZEAFL"
+    },
+    {
+      "pos": 80,
+      "item_name": "Consultancy services",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "uom": "km",
+      "quantity": 13,
+      "unit_price": 89.14,
+      "net_price": 89.14,
+      "total_price": 1158.77,
+      "sku": "CMHA-2451",
+      "discount": 0
+    },
+    {
+      "pos": 90,
+      "item_name": "Cloud storage 1TB",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 11,
+      "uom": "km",
+      "unit_price": 47.38,
+      "net_price": 47.38,
+      "total_price": 521.15,
+      "sku": "1X9T-3851",
+      "discount": 0,
+      "serial_number": "SN-JE2OWU7W"
+    },
+    {
+      "pos": 100,
+      "item_name": "Firewall setup",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 48,
+      "uom": "kg",
+      "unit_price": 49.56,
+      "net_price": 49.56,
+      "total_price": 2379.03,
+      "sku": "P6JD-4489",
+      "discount": 0,
+      "serial_number": "SN-QQ6ZR41N"
+    },
+    {
+      "pos": 110,
+      "item_name": "Server maintenance",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 45,
+      "uom": "hour",
+      "unit_price": 179.14,
+      "net_price": 179.14,
+      "total_price": 8061.18,
+      "sku": "91QU-3440",
+      "discount": 0
+    },
+    {
+      "pos": 120,
+      "item_name": "Router configuration",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 47,
+      "uom": "kg",
+      "unit_price": 57.59,
+      "net_price": 57.59,
+      "total_price": 2706.55,
+      "sku": "9L2V-2986",
+      "discount": 0,
+      "serial_number": "SN-VEJ60OT0"
+    },
+    {
+      "pos": 130,
+      "item_name": "Fiber optic cabling",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 43,
+      "uom": "hour",
+      "unit_price": 237.84,
+      "net_price": 237.84,
+      "total_price": 10227.06,
+      "sku": "MZE7-6404",
+      "discount": 0
+    },
+    {
+      "pos": 140,
+      "item_name": "Consultancy services",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 7,
+      "uom": "hour",
+      "unit_price": 486.31,
+      "net_price": 486.31,
+      "total_price": 3404.15,
+      "sku": "ZVI7-9260",
+      "discount": 0,
+      "serial_number": "SN-57SICEXB"
+    },
+    {
+      "pos": 150,
+      "item_name": "Database migration",
+      "hs_code": "8471.30.00",
+      "vat": 13,
+      "quantity": 16,
+      "uom": "kg",
+      "unit_price": 334.99,
+      "net_price": 334.99,
+      "total_price": 5359.9,
+      "sku": "II69-4263",
+      "discount": 0
+    }
+  ],
+  "system_id": {
+    "value": "45612378",
+    "critical": false,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "TAX INVOICE",
+    "critical": false,
+    "type": "string"
+  },
+  "po_reference": {
+    "value": "PO-458174",
+    "critical": false,
+    "type": "string"
+  },
+  "ship_date": {
+    "value": "12/03/2026",
+    "critical": false,
+    "type": "date"
+  },
+  "payment_terms": {
+    "value": "NET 45 DAYS",
+    "critical": false,
+    "type": "string"
+  },
+  "sales_rep": {
+    "value": "004-J.SMITH",
+    "critical": false,
+    "type": "string"
+  },
+  "ship_via": {
+    "value": "FEDEX GRND",
+    "critical": false,
+    "type": "string"
+  },
+  "tracking_number": {
+    "value": "1Z9999999999999999",
+    "critical": false,
+    "type": "string"
+  },
+  "tax_code": {
+    "value": "S1",
+    "critical": false,
+    "type": "string"
+  }
+}

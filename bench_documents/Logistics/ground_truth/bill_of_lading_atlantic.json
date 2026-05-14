@@ -1,0 +1,272 @@
+{
+  "document_id": {
+    "value": "BL517752588",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "TechCorp Inc.",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "BuildMat Solutions",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL517752588",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG1098844",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_ref": {
+    "value": "EXP-11715",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "STAR",
+    "critical": false,
+    "type": "string"
+  },
+  "precarriage_by": {
+    "value": "Starlight Maritime",
+    "critical": false,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_name": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "STARLIGHT EXPRESS",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "247E",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "Qingdao, China (CNTAOO)",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "Singapore, Singapore (SGSINN)",
+    "critical": true,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "COLLECT",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Starlight Maritime",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Qingdao",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_originals": {
+    "value": 3,
+    "critical": false,
+    "type": "number"
+  },
+  "total_packages": {
+    "value": 947,
+    "critical": true,
+    "type": "number"
+  },
+  "freight_and_charges": {
+    "value": "OCEAN FREIGHT THC",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "EISU5036124",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL37871",
+      "marks": "N/M",
+      "number_of_packages": 477,
+      "package_type": "CARTONS STC",
+      "general_description": "GENERAL MERCHANDISE",
+      "commodity": "ELECTRONICS",
+      "packaging": "STANDARD SEAWORTHY EXPORT",
+      "gross_weight": {
+        "value": 21550,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 69,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38124744",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temp": "-3",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL37871",
+        "critical": true,
+        "type": "string"
+      }
+    },
+    {
+      "container_no": {
+        "value": "GLDU7520660",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL62213",
+      "marks": "N/M",
+      "number_of_packages": 119,
+      "package_type": "CARTONS",
+      "general_description": "GENERAL MERCHANDISE",
+      "commodity": "ELECTRONICS",
+      "packaging": "STANDARD SEAWORTHY EXPORT",
+      "gross_weight": {
+        "value": 24011,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 60,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38129216",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_number": {
+        "value": "SL62213",
+        "critical": true,
+        "type": "string"
+      }
+    },
+    {
+      "container_no": {
+        "value": "OMLU5046915",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL878029",
+      "marks": "N/M",
+      "number_of_packages": 351,
+      "package_type": "CARTONS",
+      "general_description": "GENERAL MERCHANDISE",
+      "commodity": "ELECTRONICS",
+      "packaging": "STANDARD SEAWORTHY EXPORT",
+      "gross_weight": {
+        "value": 16658,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 63,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38123137",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_number": {
+        "value": "SL878029",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

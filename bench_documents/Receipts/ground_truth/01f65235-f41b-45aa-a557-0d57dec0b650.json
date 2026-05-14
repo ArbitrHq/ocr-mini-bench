@@ -1,0 +1,108 @@
+{
+  "vendor_name": {
+    "value": "Smash",
+    "critical": true,
+    "type": "string"
+  },
+  "receipt_date": {
+    "value": "2022-11-18",
+    "critical": true,
+    "type": "date"
+  },
+  "total_amount": {
+    "value": 199.20,
+    "critical": true,
+    "type": "float"
+  },
+  "total_tax": {
+    "value": 4.20,
+    "critical": true,
+    "type": "float"
+  },
+  "tax_rate": {
+    "value": null,
+    "critical": true,
+    "type": "float"
+  },
+  "total_items": {
+    "value": 2,
+    "critical": true,
+    "type": "integer"
+  },
+  "receipt_time": {
+    "value": null,
+    "critical": true,
+    "type": "string"
+  },
+  "order_number": {
+    "value": "211",
+    "critical": false,
+    "type": "string"
+  },
+  "service_type": {
+    "value": "Dine-In",
+    "critical": false,
+    "type": "string"
+  },
+  "station": {
+    "value": "Outdoor -2",
+    "critical": false,
+    "type": "string"
+  },
+  "table_number": {
+    "value": "42",
+    "critical": false,
+    "type": "string"
+  },
+  "persons_count": {
+    "value": 5,
+    "critical": false,
+    "type": "integer"
+  },
+  "open_time": {
+    "value": "15:04",
+    "critical": false,
+    "type": "string"
+  },
+  "close_time": {
+    "value": "16:31",
+    "critical": false,
+    "type": "string"
+  },
+  "subtotal_amount": {
+    "value": 195.00,
+    "critical": false,
+    "type": "float"
+  },
+  "service_charge": {
+    "value": 0.00,
+    "critical": false,
+    "type": "float"
+  },
+  "payment_method": {
+    "value": "Cash",
+    "critical": false,
+    "type": "string"
+  },
+  "website": {
+    "value": "www.smashtennis.com.eg",
+    "critical": false,
+    "type": "string"
+  },
+  "items": [
+    {
+      "item_name": "Piccata & Mushroom",
+      "item_number": "43",
+      "quantity": 1,
+      "unit_price": 65.00,
+      "total_price": 165.00
+    },
+    {
+      "item_name": "Fresh Mango",
+      "item_number": "213",
+      "quantity": 1,
+      "unit_price": 30.00,
+      "total_price": 30.00
+    }
+  ]
+}

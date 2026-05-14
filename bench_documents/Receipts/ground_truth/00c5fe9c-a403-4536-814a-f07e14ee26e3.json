@@ -1,0 +1,28 @@
+{
+  "vendor_name": { "value": "Sale Sucre Patisserie", "critical": true, "type": "string" },
+  "receipt_date": { "value": "2022-10-28", "critical": true, "type": "date" },
+  "total_amount": { "value": 100.01, "critical": true, "type": "float" },
+  "total_tax": { "value": 12.29, "critical": true, "type": "float" },
+  "tax_rate": { "value": 14.0, "critical": true, "type": "float" },
+  "total_items": { "value": 1, "critical": true, "type": "integer" },
+  "receipt_time": { "value": "19:48", "critical": true, "type": "string" },
+  "store_name": { "value": "Sale Sucre (Sheraton)", "critical": false, "type": "string" },
+  "store_address": { "value": "3 Kalid Ibn El Walid, Cairo", "critical": false, "type": "string" },
+  "order_type": { "value": "Take Away", "critical": false, "type": "string" },
+  "order_number": { "value": "825821", "critical": false, "type": "string" },
+  "server_name": { "value": "Ali Okel", "critical": false, "type": "string" },
+  "server_id": { "value": "82", "critical": false, "type": "string" },
+  "pretax_amount": { "value": 87.72, "critical": false, "type": "float" },
+  "payment_method": { "value": "VISA AAIB", "critical": false, "type": "string" },
+  "amount_tendered": { "value": 100.01, "critical": false, "type": "float" },
+  "vat_registration_number": { "value": "200-195-115", "critical": false, "type": "string" },
+  "contact_phone": { "value": "01000005584 - 02-22684071", "critical": false, "type": "string" },
+  "items": [
+    {
+      "item_name": "Forma Plain (L)",
+      "quantity": 1,
+      "unit_price": 87.72,
+      "total_price": 87.72
+    }
+  ]
+}

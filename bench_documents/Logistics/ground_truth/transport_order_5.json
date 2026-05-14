@@ -1,0 +1,203 @@
+{
+  "document_id": {
+    "value": "TO-2840425",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "TRANSPORT ORDER",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "transport_party_name": {
+    "value": "Blue Anchor Logistics GmbH",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_address": {
+    "value": "Robert-Kohlhammer-Straße 99, DE-10115 Berlin, Germany",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_contact_name": {
+    "value": "Robert Anchor",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_phone": {
+    "value": "+49 30 1234 5678",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_email": {
+    "value": "r.anchor@blue-anchor.de",
+    "critical": false,
+    "type": "string"
+  },
+  "ba_reference_number": {
+    "value": "BA-40425",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Fast-Track Logistics Ltd",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_address": {
+    "value": "123 Industrial Way, BG-1000 Sofia, Bulgaria",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_contact_name": {
+    "value": "Elena Petrova",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_phone": {
+    "value": "+359 2 987 6543",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_email": {
+    "value": "ops@fasttrack.bg",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_tms_number": {
+    "value": "18662",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_mode": {
+    "value": "ROAD",
+    "critical": false,
+    "type": "string"
+  },
+  "truck_type": {
+    "value": "Tautliner",
+    "critical": false,
+    "type": "string"
+  },
+  "truck_size": {
+    "value": 13.6,
+    "critical": false,
+    "type": "number"
+  },
+  "truck_size_unit": {
+    "value": "m",
+    "critical": false,
+    "type": "string"
+  },
+  "truck_number": {
+    "value": "TBD",
+    "critical": false,
+    "type": "string"
+  },
+  "trailer_number": {
+    "value": "TBD",
+    "critical": false,
+    "type": "string"
+  },
+  "rate": {
+    "value": 307,
+    "critical": true,
+    "type": "number"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_date": {
+    "value": "2026-03-13",
+    "critical": true,
+    "type": "date"
+  },
+  "loading_time": {
+    "value": "08:00 - 12:00",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_company": {
+    "value": "Tech-Hub C/O Global Logistics",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_address": {
+    "value": "Industrial Park 4, DE-68159 Mannheim, Germany",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_phone": {
+    "value": "+49 30 1234 5678",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_reference": {
+    "value": "L-REF-8150",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_date": {
+    "value": "2026-04-12",
+    "critical": true,
+    "type": "date"
+  },
+  "unloading_time": {
+    "value": "14:00 - 17:00",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_company": {
+    "value": "Retail-Core GmbH",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_address": {
+    "value": "Logistics Center 1, DE-80331 Munich, Germany",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_phone": {
+    "value": "+49 30 1234 5678",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_reference": {
+    "value": "U-REF-3411",
+    "critical": false,
+    "type": "string"
+  },
+  "special_instructions": {
+    "value": "Driver must wear safety shoes and high-vis vest.",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_instructions": {
+    "value": "Deliver to Gate 9, contact warehouse manager upon arrival. Ensure cargo is secured as per standards. No transshipment allowed.",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "cargo_type": {
+        "value": "pallets",
+        "critical": true,
+        "type": "string"
+      },
+      "goods_description": "Auto Parts",
+      "quantity": 28,
+      "quantity_type": "Euro Pallets",
+      "gross_weight": 21,
+      "gross_weight_unit": "T",
+      "ldm": 13.6,
+      "consignee_at_loading": "RETAIL-CORE"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+:root {
+  color-scheme: dark;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+body {
+  margin: 0;
+  background: #060b14;
+  color: #e8eef8;
+}
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+h1 { margin: 0; font-size: 30px; }
+.meta { color: #9fb2ca; font-size: 14px; }
+.link { color: #86efd8; text-decoration: none; margin-left: auto; }
+.card {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  background: rgba(12, 20, 34, 0.82);
+  padding: 12px;
+  margin-bottom: 14px;
+}
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+button.tab {
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.04);
+  color: #d6e1f2;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+button.tab.active {
+  border-color: #6be5cc;
+  background: rgba(55, 182, 160, 0.2);
+}
+.table-wrap { overflow: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 980px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left; }
+th { color: #b8c8df; font-weight: 600; font-size: 13px; }
+td { font-size: 14px; }
+.controls-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+label { display: grid; gap: 6px; color: #9fb2ca; font-size: 13px; }
+select {
+  background: #0a1220;
+  border: 1px solid rgba(255,255,255,0.16);
+  color: #e8eef8;
+  border-radius: 8px;
+  padding: 8px;
+}
+.split {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 1000px) {
+  .split { grid-template-columns: 1fr; }
+}
+.pdf-frame {
+  width: 100%;
+  height: 540px;
+  border: 0;
+  background: #0b111d;
+}
+.code {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 540px;
+  overflow: auto;
+  background: rgba(0,0,0,0.25);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.pass { background: rgba(34,197,94,0.18); }
+.fail { background: rgba(248,113,113,0.18); }
+.gray { background: rgba(148,163,184,0.14); }

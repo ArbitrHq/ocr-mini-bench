@@ -1,0 +1,224 @@
+{
+  "document_id": {
+    "value": "BL897336956",
+    "critical": true,
+    "type": "string"
+  },
+  "bill_of_lading_type": {
+    "value": "NON-NEGOTIABLE COPY",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "MRS RAJWINDER HOTHI & MR MANISH BHATT C/O; SIMPSONS REMOVALS & STORAGE UNIT",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "2 TUPTON WAY, HOLMEWOOD INDUSTRIAL ESTATE, CHESTERFIELD, DERBYSHIRE S42 5BX GB",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+44 1246 854987",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "removals@simpsons.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "MRS RAJWINDER HOTHI & MR MANISH BHATT C/O",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "EMERALD RELOCATIONS NO 12 SIXTH STREET, BABA NAGAR VILLVAKKAM, CHENNAI INDIA 600049",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "91 94458 47282",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "BLR@EMERALDRELOCATIONS.COM",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "EMERALD RELOCATIONS",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "NO 12 SIXTH STREET, BABA NAGAR VILLVAKKAM, CHENNAI INDIA 600049",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL897336956",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG8223068",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_ref": {
+    "value": "EXP-63512",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "HMLG",
+    "critical": false,
+    "type": "string"
+  },
+  "imo_number": {
+    "value": "9480227",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_agents_endorsements": {
+    "value": "SHIPPER'S LOAD, COUNT AND SEALED",
+    "critical": false,
+    "type": "string"
+  },
+  "type_of_movement": {
+    "value": "FCL/FCL",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge_agent_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "RIO DE LA PLATA",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "3208",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "TILBURY, ESSEX",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "8 OBERON CLOSE, CV34 6XF WARWICK, GREAT BRITAIN",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "NHAVA SHEVA",
+    "critical": true,
+    "type": "string"
+  },
+  "place_of_delivery": {
+    "value": "DELHI",
+    "critical": false,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "PREPAID",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Hemisphere Logistics",
+    "critical": false,
+    "type": "string"
+  },
+  "carriers_receipt": {
+    "value": "1 cntr",
+    "critical": false,
+    "type": "string"
+  },
+  "laden_on_board_date": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Dubai",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_rider_pages": {
+    "value": 0,
+    "critical": false,
+    "type": "number"
+  },
+  "total_packages": {
+    "value": 152,
+    "critical": true,
+    "type": "number"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "HMLU2382861",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "MLGB2683941",
+      "marks": "HOTHI, HARYANA",
+      "number_of_packages": 152,
+      "package_type": "PACKAGES",
+      "general_description": "1 CONT. 20'X8'6\" GENERAL PURPOSE CONT.",
+      "gross_weight": {
+        "value": 2500,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kgs",
+      "measurement": 25,
+      "measurement_unit": "cu.m.",
+      "hs_code": {
+        "value": "99050000",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_number": {
+        "value": "MLGB2683941",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "document_id": {
+    "value": "BL895131770",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "LogiTrans Global",
+    "critical": true,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_phone": {
+    "value": "+31 10 123 4567",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_email": {
+    "value": "dispatch@logitrans.com",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "BuildMat Solutions",
+    "critical": true,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_name": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "notify_party_email": {
+    "value": "billing@techcorp.com",
+    "critical": false,
+    "type": "string"
+  },
+  "bl_number": {
+    "value": "BL895131770",
+    "critical": true,
+    "type": "string"
+  },
+  "booking_number": {
+    "value": "BKG1688683",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_ref": {
+    "value": "EXP-13536",
+    "critical": false,
+    "type": "string"
+  },
+  "scac": {
+    "value": "OCEA",
+    "critical": false,
+    "type": "string"
+  },
+  "precarriage_by": {
+    "value": "Oceanic Meridian Lines",
+    "critical": false,
+    "type": "string"
+  },
+  "place_of_receipt": {
+    "value": "Callao, Peru (PECLLL)",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_name": {
+    "value": "BuildMat Solutions",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_address": {
+    "value": "12 Construction Way, London, E1 6AN",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_phone": {
+    "value": "+44 20 7946 0958",
+    "critical": false,
+    "type": "string"
+  },
+  "delivery_agent_email": {
+    "value": "sales@buildmat.co.uk",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "VANGUARD SPIRIT",
+    "critical": true,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "947E",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "Callao, Peru (PECLLL)",
+    "critical": true,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "Rotterdam, Netherlands (NLRTDM)",
+    "critical": true,
+    "type": "string"
+  },
+  "freight_terms": {
+    "value": "PREPAID",
+    "critical": true,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "Oceanic Meridian Lines",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "place_of_issue": {
+    "value": "Callao",
+    "critical": false,
+    "type": "string"
+  },
+  "number_of_originals": {
+    "value": 3,
+    "critical": false,
+    "type": "number"
+  },
+  "total_packages": {
+    "value": 518,
+    "critical": true,
+    "type": "number"
+  },
+  "freight_and_charges": {
+    "value": "OCEAN FREIGHT THC",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "container_no": {
+        "value": "CNFU5359394",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL172829",
+      "marks": "N/M",
+      "number_of_packages": 101,
+      "package_type": "CARTONS",
+      "general_description": "FROZEN SEAFOOD",
+      "commodity": "FROZEN SEAFOOD",
+      "gross_weight": {
+        "value": 20340,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 22,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38127108",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temperature": "-18",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL172829",
+        "critical": true,
+        "type": "string"
+      }
+    },
+    {
+      "container_no": {
+        "value": "HLXU7183162",
+        "critical": true,
+        "type": "string"
+      },
+      "seal_no": "SL274880",
+      "marks": "N/M",
+      "number_of_packages": 417,
+      "package_type": "CARTONS",
+      "general_description": "FROZEN SEAFOOD",
+      "commodity": "FROZEN SEAFOOD",
+      "gross_weight": {
+        "value": 11760,
+        "critical": true,
+        "type": "integer"
+      },
+      "gross_weight_unit": "kg",
+      "measurement": 41,
+      "measurement_unit": "cbm",
+      "hs_code": {
+        "value": "38125317",
+        "critical": true,
+        "type": "string"
+      },
+      "set_temperature": "-18",
+      "set_temperature_unit": "C",
+      "seal_number": {
+        "value": "SL274880",
+        "critical": true,
+        "type": "string"
+      }
+    }
+  ]
+}

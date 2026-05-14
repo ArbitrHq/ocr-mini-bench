@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-03-13T17:12:45.829Z",
+  "domains": [
+    {
+      "id": "invoices",
+      "source_directory": "bench_documents/Invoices",
+      "document_count": 12,
+      "documents": [
+        {
+          "document_id": "invoices-auto-repair-shop-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/auto_repair_shop_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/auto_repair_shop_en.json"
+        },
+        {
+          "document_id": "invoices-catering-service-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/catering_service_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/catering_service_en.json"
+        },
+        {
+          "document_id": "invoices-classic-industrial-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/classic_industrial_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/classic_industrial_en.json"
+        },
+        {
+          "document_id": "invoices-colorful-saas-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/colorful_saas_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/colorful_saas_en.json"
+        },
+        {
+          "document_id": "invoices-complex-erp-table-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/complex_erp_table_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/complex_erp_table_en.json"
+        },
+        {
+          "document_id": "invoices-digital-clean-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/digital_clean_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/digital_clean_en.json"
+        },
+        {
+          "document_id": "invoices-ecommerce-retail-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/ecommerce_retail_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/ecommerce_retail_en.json"
+        },
+        {
+          "document_id": "invoices-freelance-designer-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/freelance_designer_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/freelance_designer_en.json"
+        },
+        {
+          "document_id": "invoices-logistics-grid-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/logistics_grid_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/logistics_grid_en.json"
+        },
+        {
+          "document_id": "invoices-medical-bill-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/medical_bill_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/medical_bill_en.json"
+        },
+        {
+          "document_id": "invoices-modern-banner-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/modern_banner_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/modern_banner_en.json"
+        },
+        {
+          "document_id": "invoices-solar-installation-en",
+          "domain": "invoices",
+          "source_pdf": "bench_documents/Invoices/solar_installation_en.pdf",
+          "ground_truth": "bench_documents/Invoices/ground_truth/solar_installation_en.json"
+        }
+      ]
+    },
+    {
+      "id": "receipts",
+      "source_directory": "bench_documents/Receipts",
+      "document_count": 13,
+      "documents": [
+        {
+          "document_id": "receipts-00a6f020-aa1b-486d-828d-64ade631a89f",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/00a6f020-aa1b-486d-828d-64ade631a89f.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/00a6f020-aa1b-486d-828d-64ade631a89f.json"
+        },
+        {
+          "document_id": "receipts-00c5fe9c-a403-4536-814a-f07e14ee26e3",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/00c5fe9c-a403-4536-814a-f07e14ee26e3.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/00c5fe9c-a403-4536-814a-f07e14ee26e3.json"
+        },
+        {
+          "document_id": "receipts-00e7a63f-4d63-411d-9522-6693b453ec3d",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/00e7a63f-4d63-411d-9522-6693b453ec3d.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/00e7a63f-4d63-411d-9522-6693b453ec3d.json"
+        },
+        {
+          "document_id": "receipts-00e8b865-30b5-4f28-9b9d-af003877ec8c",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/00e8b865-30b5-4f28-9b9d-af003877ec8c.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/00e8b865-30b5-4f28-9b9d-af003877ec8c.json"
+        },
+        {
+          "document_id": "receipts-00eb313f-e5d0-4646-81e1-dee0c452cf39",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/00eb313f-e5d0-4646-81e1-dee0c452cf39.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/00eb313f-e5d0-4646-81e1-dee0c452cf39.json"
+        },
+        {
+          "document_id": "receipts-00fa3f70-2f76-4f0a-a2fa-f358210e3526",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/00fa3f70-2f76-4f0a-a2fa-f358210e3526.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/00fa3f70-2f76-4f0a-a2fa-f358210e3526.json"
+        },
+        {
+          "document_id": "receipts-01c7dfaf-b2cd-4633-a434-2538fc31a3ca",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/01c7dfaf-b2cd-4633-a434-2538fc31a3ca.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/01c7dfaf-b2cd-4633-a434-2538fc31a3ca.json"
+        },
+        {
+          "document_id": "receipts-01e2748e-f5bf-4fe6-b2b5-3bae15b3f6ed",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/01e2748e-f5bf-4fe6-b2b5-3bae15b3f6ed.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/01e2748e-f5bf-4fe6-b2b5-3bae15b3f6ed.json"
+        },
+        {
+          "document_id": "receipts-01f65235-f41b-45aa-a557-0d57dec0b650",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/01f65235-f41b-45aa-a557-0d57dec0b650.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/01f65235-f41b-45aa-a557-0d57dec0b650.json"
+        },
+        {
+          "document_id": "receipts-01f71384-6926-41fc-9dae-a713c7964747",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/01f71384-6926-41fc-9dae-a713c7964747.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/01f71384-6926-41fc-9dae-a713c7964747.json"
+        },
+        {
+          "document_id": "receipts-01f75e47-06e2-49d6-b751-e0893b8223ea",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/01f75e47-06e2-49d6-b751-e0893b8223ea.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/01f75e47-06e2-49d6-b751-e0893b8223ea.json"
+        },
+        {
+          "document_id": "receipts-0a019782-5e7d-4d0e-a258-e3833896a1de",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/0a019782-5e7d-4d0e-a258-e3833896a1de.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/0a019782-5e7d-4d0e-a258-e3833896a1de.json"
+        },
+        {
+          "document_id": "receipts-0a0c397e-dd73-4705-85f4-e20ff09bcd07",
+          "domain": "receipts",
+          "source_pdf": "bench_documents/Receipts/0a0c397e-dd73-4705-85f4-e20ff09bcd07.pdf",
+          "ground_truth": "bench_documents/Receipts/ground_truth/0a0c397e-dd73-4705-85f4-e20ff09bcd07.json"
+        }
+      ]
+    },
+    {
+      "id": "logistics",
+      "source_directory": "bench_documents/Logistics",
+      "document_count": 17,
+      "documents": [
+        {
+          "document_id": "logistics-bill-of-lading-alt-1",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_alt_1.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_alt_1.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-alt-2",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_alt_2.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_alt_2.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-alt-3",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_alt_3.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_alt_3.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-atlantic",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_atlantic.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_atlantic.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-indian",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_indian.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_indian.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-mediterranean",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_mediterranean.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_mediterranean.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-oceanic",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_oceanic.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_oceanic.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-pacific",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_pacific.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_pacific.json"
+        },
+        {
+          "document_id": "logistics-bill-of-lading-standard",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/bill_of_lading_standard.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/bill_of_lading_standard.json"
+        },
+        {
+          "document_id": "logistics-container-transport-order-1",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/container_transport_order_1.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/container_transport_order_1.json"
+        },
+        {
+          "document_id": "logistics-container-transport-order-2",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/container_transport_order_2.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/container_transport_order_2.json"
+        },
+        {
+          "document_id": "logistics-transport-order-1",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/transport_order_1.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/transport_order_1.json"
+        },
+        {
+          "document_id": "logistics-transport-order-2",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/transport_order_2.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/transport_order_2.json"
+        },
+        {
+          "document_id": "logistics-transport-order-3",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/transport_order_3.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/transport_order_3.json"
+        },
+        {
+          "document_id": "logistics-transport-order-4",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/transport_order_4.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/transport_order_4.json"
+        },
+        {
+          "document_id": "logistics-transport-order-5",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/transport_order_5.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/transport_order_5.json"
+        },
+        {
+          "document_id": "logistics-transport-order-6",
+          "domain": "logistics",
+          "source_pdf": "bench_documents/Logistics/transport_order_6.pdf",
+          "ground_truth": "bench_documents/Logistics/ground_truth/transport_order_6.json"
+        }
+      ]
+    }
+  ]
+}

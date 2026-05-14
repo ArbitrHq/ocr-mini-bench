@@ -1,0 +1,165 @@
+{
+  "document_id": {
+    "value": "TO-4168528",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "FLATBED TRANSPORT ORDER",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "transport_party_name": {
+    "value": "Nexus Global Logistics",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_address": {
+    "value": "Industrial Park 4, 1000 City Center",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_contact_name": {
+    "value": "Dispatch Team",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_email": {
+    "value": "dispatch@nexusgloballogistics.com",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_name": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_phone": {
+    "value": "+1 (555) 123-4567",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_mode": {
+    "value": "ROAD",
+    "critical": false,
+    "type": "string"
+  },
+  "truck_type": {
+    "value": "Flatbed / Open Top",
+    "critical": false,
+    "type": "string"
+  },
+  "rate": {
+    "value": 570,
+    "critical": true,
+    "type": "number"
+  },
+  "currency": {
+    "value": "EUR",
+    "critical": false,
+    "type": "string"
+  },
+  "tarp_required": {
+    "value": true,
+    "critical": false,
+    "type": "boolean"
+  },
+  "straps_required": {
+    "value": 7,
+    "critical": false,
+    "type": "number"
+  },
+  "chains_required": {
+    "value": 4,
+    "critical": false,
+    "type": "number"
+  },
+  "oversized_load": {
+    "value": true,
+    "critical": false,
+    "type": "boolean"
+  },
+  "permit_number": {
+    "value": "PERM-974888",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_date": {
+    "value": "2026-03-13",
+    "critical": true,
+    "type": "date"
+  },
+  "loading_time": {
+    "value": "08:00 - 12:00",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_company": {
+    "value": "TechCorp Inc.",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_address": {
+    "value": "145 Innovation Drive, San Francisco, CA 94105",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_reference": {
+    "value": "L-REF-7063",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_date": {
+    "value": "2026-04-12",
+    "critical": true,
+    "type": "date"
+  },
+  "unloading_time": {
+    "value": "14:00 - 17:00",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_company": {
+    "value": "Smith Logistics",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_address": {
+    "value": "5 Ring Avenue, Miami, FL 33101",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_reference": {
+    "value": "U-REF-1212",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_instructions": {
+    "value": "Call 1 hour before arrival. Driver must secure load with straps and chains. Tarping required if raining.",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "cargo_type": {
+        "value": "Unpackaged / Skids",
+        "critical": true,
+        "type": "string"
+      },
+      "goods_description": "Steel Coils / Construction Materials / Machinery",
+      "quantity": 33,
+      "gross_weight": 6974,
+      "gross_weight_unit": "kg"
+    }
+  ]
+}

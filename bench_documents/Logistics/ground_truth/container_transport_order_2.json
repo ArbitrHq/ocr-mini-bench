@@ -1,0 +1,254 @@
+{
+  "document_id": {
+    "value": "TO-8159976",
+    "critical": true,
+    "type": "string"
+  },
+  "shipment_number": {
+    "value": "TO-8159976S",
+    "critical": true,
+    "type": "string"
+  },
+  "document_type": {
+    "value": "CARTAGE ADVICE WITH RECEIPT",
+    "critical": false,
+    "type": "string"
+  },
+  "date_of_issue": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "transport_party_name": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_contact_name": {
+    "value": "Dispatch Team",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_phone": {
+    "value": "+32 3 555 12 34",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_email": {
+    "value": "dispatch@nexusgloballogistics.com",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_party_reference": {
+    "value": "TO-8159976",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_name": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": false,
+    "type": "string"
+  },
+  "shipper_reference": {
+    "value": "L-REF-9758",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_name": {
+    "value": "Johnson & Sons",
+    "critical": false,
+    "type": "string"
+  },
+  "consignee_address": {
+    "value": "1 Main Street, New York, NY 10001",
+    "critical": false,
+    "type": "string"
+  },
+  "transport_mode": {
+    "value": "SEA",
+    "critical": false,
+    "type": "string"
+  },
+  "vessel": {
+    "value": "OCEAN EXPRESS",
+    "critical": false,
+    "type": "string"
+  },
+  "voyage": {
+    "value": "137W",
+    "critical": false,
+    "type": "string"
+  },
+  "lloyds_imo_number": {
+    "value": "9243198",
+    "critical": false,
+    "type": "string"
+  },
+  "ocean_carrier": {
+    "value": "GLOBAL LINES",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_loading": {
+    "value": "BEANR",
+    "critical": false,
+    "type": "string"
+  },
+  "port_of_discharge": {
+    "value": "USSAV",
+    "critical": false,
+    "type": "string"
+  },
+  "etd": {
+    "value": "2026-03-13",
+    "critical": false,
+    "type": "date"
+  },
+  "eta": {
+    "value": "2026-04-12",
+    "critical": false,
+    "type": "date"
+  },
+  "ocean_bl_number": {
+    "value": "HLCUANR210257442",
+    "critical": false,
+    "type": "string"
+  },
+  "house_bl_number": {
+    "value": "ANRA47008",
+    "critical": false,
+    "type": "string"
+  },
+  "carrier_booking_reference": {
+    "value": "L-REF-9758",
+    "critical": false,
+    "type": "string"
+  },
+  "clt_reference": {
+    "value": "MEMP010",
+    "critical": false,
+    "type": "string"
+  },
+  "empty_depot_name": {
+    "value": "CONTAINER MAINTENANCE EN REPAIR",
+    "critical": false,
+    "type": "string"
+  },
+  "empty_depot_address": {
+    "value": "KAAI 614, ANTWERPSEBAAN 1, 2040 ANTWERP VLAANDEREN, BELGIUM",
+    "critical": false,
+    "type": "string"
+  },
+  "empty_depot_drop_mode": {
+    "value": "WUP - Wait for Pack/Unpack",
+    "critical": false,
+    "type": "string"
+  },
+  "empty_depot_reference": {
+    "value": "53917450",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_date": {
+    "value": "2026-03-13",
+    "critical": true,
+    "type": "date"
+  },
+  "loading_time": {
+    "value": "08:00 - 12:00",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_company": {
+    "value": "LogiTrans Global",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_address": {
+    "value": "88 Harbor Road, Rotterdam, 3011 AA",
+    "critical": true,
+    "type": "string"
+  },
+  "loading_reference": {
+    "value": "TO-8159976 (L-REF-9758)",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_contact": {
+    "value": "+32 68 27 27 29",
+    "critical": false,
+    "type": "string"
+  },
+  "loading_drop_mode": {
+    "value": "WUP - Wait for Pack/Unpack",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_company": {
+    "value": "Johnson & Sons",
+    "critical": false,
+    "type": "string"
+  },
+  "unloading_address": {
+    "value": "1 Main Street, New York, NY 10001",
+    "critical": true,
+    "type": "string"
+  },
+  "unloading_drop_mode": {
+    "value": "WUP - Wait for Pack/Unpack",
+    "critical": false,
+    "type": "string"
+  },
+  "containers": [
+    {
+      "cargo_type": {
+        "value": "container",
+        "critical": true,
+        "type": "string"
+      },
+      "container_no": "OMLU1067052",
+      "seal_no": "ML-5357968",
+      "container_size": "40",
+      "container_size_unit": "ft",
+      "container_temperature": "20",
+      "container_temperature_unit": "C",
+      "goods_description": "AUTO PARTS",
+      "commodity": "-",
+      "quantity": 21,
+      "quantity_type": "CNT",
+      "gross_weight": 7386,
+      "gross_weight_unit": "kg",
+      "goods_weight": 7386,
+      "goods_weight_unit": "kg",
+      "volume": 35,
+      "volume_unit": "M3",
+      "package_length": 40,
+      "length_unit": "FT",
+      "package_width": 8,
+      "width_unit": "FT",
+      "package_height": 9.5,
+      "height_unit": "FT",
+      "marks": "JDER0912Y"
+    }
+  ],
+  "unloading_date": {
+    "value": null,
+    "critical": true,
+    "type": "date"
+  },
+  "unloading_time": {
+    "value": null,
+    "critical": true,
+    "type": "string"
+  },
+  "rate": {
+    "value": null,
+    "critical": true,
+    "type": "number"
+  }
+}
