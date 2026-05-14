@@ -11,6 +11,8 @@
 
 A lightweight, reproducible benchmark to compare OCR extraction quality, reliability, latency, and cost across multiple LLM providers on business documents.
 
+[Typescript Version](https://github.com/ArbitrHq/ocr-mini-bench-typescript)
+
 ## Quick start
 
 Requires Python 3.11+ and [`uv`](https://docs.astral.sh/uv/).
