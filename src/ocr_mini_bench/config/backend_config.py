@@ -53,6 +53,7 @@ PRICING_REGISTRY: dict[str, ModelPricing] = {
     "gemini-3.1-flash-lite-preview": ModelPricing(input=0.25, output=1.5, cache_input=0.025),
     "gemini-3-pro-preview": ModelPricing(input=2.0, output=12.0),
     "gemini-3-flash-preview": ModelPricing(input=0.5, output=3.0),
+    "gemini-3.5-flash": ModelPricing(input=1.5, output=9.0),
     # Mistral LLMs
     "mistral-small-latest": ModelPricing(input=0.1, output=0.3),
     "mistral-medium-latest": ModelPricing(input=0.4, output=2.0),

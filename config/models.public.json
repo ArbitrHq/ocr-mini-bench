@@ -89,6 +89,12 @@
     },
     {
       "provider": "google",
+      "model_id": "gemini-3.5-flash",
+      "model_label": "Gemini 3.5 Flash",
+      "tier": "balanced"
+    },
+    {
+      "provider": "google",
       "model_id": "gemini-3.1-pro-preview",
       "model_label": "Gemini 3.1 Pro",
       "tier": "sota"

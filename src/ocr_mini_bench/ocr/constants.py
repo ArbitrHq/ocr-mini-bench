@@ -19,6 +19,7 @@ GEMINI_EXPLICIT_CACHE_MODELS: frozenset[str] = frozenset(
         "gemini-3.1-flash-lite-preview",
         "gemini-3.1-pro-preview",
         "gemini-3-pro-preview",
+        "gemini-3.5-flash",
     }
 )
 

@@ -47,6 +47,7 @@ MODEL_CATALOG: dict[ModelProvider, list[ModelOption]] = {
         ModelOption(id="gemini-3.1-flash-lite-preview", label="Gemini 3.1 Flash-Lite"),
         ModelOption(id="gemini-3-pro-preview", label="Gemini 3 Pro"),
         ModelOption(id="gemini-3-flash-preview", label="Gemini 3 Flash"),
+        ModelOption(id="gemini-3.5-flash", label="Gemini 3.5 Flash"),
     ],
     "mistral": [
         ModelOption(id="mistral-ocr-latest", label="Mistral OCR (Latest)"),
