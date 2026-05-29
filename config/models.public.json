@@ -70,6 +70,12 @@
       "tier": "balanced"
     },
     {
+      "provider": "anthropic",
+      "model_id": "claude-opus-4-8",
+      "model_label": "Claude Opus 4.8",
+      "tier": "sota"
+    },
+    {
       "provider": "google",
       "model_id": "gemini-2.5-flash-lite",
       "model_label": "Gemini 2.5 Flash-Lite",

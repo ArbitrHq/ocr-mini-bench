@@ -19,6 +19,7 @@ class ModelPricing:
 
 PRICING_REGISTRY: dict[str, ModelPricing] = {
     # Anthropic
+    "claude-opus-4-8": ModelPricing(input=5.0, output=25.0),
     "claude-opus-4-7": ModelPricing(input=5.0, output=25.0),
     "claude-opus-4-6": ModelPricing(input=5.0, output=25.0),
     "claude-opus-4-5": ModelPricing(input=5.0, output=25.0),

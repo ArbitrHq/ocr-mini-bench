@@ -16,6 +16,7 @@ class ModelOption:
 
 MODEL_CATALOG: dict[ModelProvider, list[ModelOption]] = {
     "anthropic": [
+        ModelOption(id="claude-opus-4-8", label="Claude Opus 4.8"),
         ModelOption(id="claude-opus-4-1-20250805", label="Claude Opus 4.1"),
         ModelOption(id="claude-opus-4-20250514", label="Claude Opus 4"),
         ModelOption(id="claude-sonnet-4-20250514", label="Claude Sonnet 4"),
